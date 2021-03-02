@@ -1,0 +1,270 @@
+.home{
+  background: rgb(11,76,79);
+  background: radial-gradient(circle, rgba(11,76,79,1) 0%, rgba(24,30,42,1) 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 85px);
+  box-shadow: inset 0px 5px 10px 0px rgba(0,0,0,0.75);
+  .inner_Text{
+    margin-top: 30px;
+    h1{
+      color: white;
+      font-size: 20px;
+      span{
+        color: rgb(246, 71, 71);
+      }
+    }
+    p{
+      color: #efefef;
+      font-size: 17px;
+    }
+  }
+  .home-image-wrap{
+    #home-pizza{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 80%;
+      height: auto;
+      z-index: 10;
+      animation: fadeInUp 1s ease-out;
+    }
+    #home-flour{
+      position: absolute;
+      bottom: 8%;
+      left: 1%;
+      transform:rotate(-50deg);
+      width: 60%;
+      height: auto;
+      z-index: 1;
+      animation: fadeInFlour 1s ease-out 1s;
+      animation-fill-mode:backwards;
+    }
+    #home-cheese{
+      position: absolute;
+      right: 5%;
+      bottom: 25%;
+      width: 25%;
+      height: auto;
+      z-index: 1;
+      animation: fadeInCheese 1s ease-out .5s;
+      animation-fill-mode:backwards;
+    }
+    #home-basil,
+    #home-meat{
+      display: none;
+    }
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50deg, 0, 0);
+  }
+}
+
+@keyframes fadeInCheese {
+  from {
+    opacity: 0;
+    transform: translate3d(-200%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50deg, 0, 0);
+  }
+}
+@keyframes fadeInFlour {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px){
+  .home {
+    .inner_Text{
+      h1{
+        text-align: center;
+        font-size: 21px;
+      }
+      p{
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+    .home-image-wrap{
+      #home-pizza{
+        width: 70%;
+      }
+      #home-flour{
+        width: 40%;
+        left: 5%;
+        bottom: 10%;
+      }
+      #home-cheese{
+        width: 18%;
+        bottom: 20%;
+        right: 3%;
+      }
+      #home-basil{
+        display: block;
+        width: 25%;
+        height: auto;
+        position: absolute;
+        right: 25%;
+        bottom: 43%;
+        animation: fadeInBasil 1s ease-out .5s;
+        animation-fill-mode:backwards;
+      }
+    }
+  }
+}
+@keyframes fadeInBasil {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (min-width: 1024px){
+  .home {
+    .btn-info{
+      margin: 35px auto;
+    }
+    .inner_Text{
+      h1{
+        text-align: center;
+        font-size: 22px;
+      }
+      p{
+        text-align: center;
+        font-size: 19px;
+      }
+    }
+    .home-image-wrap{
+      #home-pizza{
+        width: 65%;
+      }
+      #home-flour{
+        width: 35%;
+        left: 15%;
+        bottom: 25%;
+      }
+      #home-cheese{
+        width: 15%;
+        bottom: 15%;
+      }
+      #home-basil{
+        right: 15%;
+        bottom: 40%;
+      }
+      #home-meat{
+        display: block;
+        position: absolute;
+        left: 1%;
+        bottom: 10%;
+        width: 20%;
+        height: auto;
+        transform: rotate(-50deg);
+        animation: fadeInMeat 1s ease-out .5s;
+        animation-fill-mode:backwards;
+      }
+    }
+  }
+}
+@keyframes fadeInMeat {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50deg, 0, 0);
+  }
+}
+@media (min-width: 1200px){
+  .home{
+    .inner_Text {
+      margin-top: 50px;
+    }
+    .home-image-wrap{
+      #home-pizza{
+        width: 50%;
+      }
+      #home-flour{
+        width: 30%;
+        bottom: 20%;
+        left: 20%;
+      }
+      #home-cheese{
+        width: 13%;
+        right: 12%;
+        bottom: 10%;
+      }
+      #home-basil{
+        width: 20%;
+        right: 22%;
+        bottom: 38%;
+      }
+      #home-meat{
+        left: 10%;
+        bottom: 8%;
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px){
+  .home{
+    .btn-info{
+      font-size: 18px;
+    }
+    .inner_Text{
+      margin-top: 60px;
+      h1{
+        text-align: center;
+        font-size: 24px;
+      }
+      p{
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+    .home-image-wrap{
+      #home-pizza{
+        width: 45%;
+      }
+      #home-flour{
+        width: 20%;
+        left: 25%;
+        bottom: 28%;
+      }
+      #home-cheese{
+        width: 10%;
+        right: 18%;
+        bottom: 10%;
+      }
+      #home-basil{
+        width: 15%;
+        right: 28%;
+        bottom: 40%;
+      }
+      #home-meat{
+         left: 15%;
+         bottom: 12%;
+         width: 12%;
+      }
+    }
+  }
+}

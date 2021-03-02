@@ -1,0 +1,104 @@
+@import "fonts/condensed/font.css";
+
+$red:rgb(246, 71, 71);
+
+/*
+@media (min-width: 640px);
+@media (min-width: 768px);
+@media (min-width: 1024px);
+@media (min-width: 1440px);
+ */
+body{
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html{
+  box-sizing: border-box;
+}
+*,*::after,*::before{
+  box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: 'RobotoCondensed-Regular';
+}
+p{
+  font-family: 'RobotoCondensed-Light';
+}
+
+.container{
+  padding: 0 20px;
+}
+@media (min-width: 576px) {
+  .container{
+    padding: 0 30px;
+  }
+}
+@media (min-width: 768px){
+  .container{
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1440px){
+  .container{
+    max-width: 1200px;
+  }
+}
+
+button{
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-mobile-menu{
+  color: white;
+  font-size: 25px;
+  transition: all .6s;
+}
+.btn-mobile-menu:hover,
+.btn-mobile-menu:active {
+  color: $red;
+  transition: all .6s;
+}
+
+.btn-basket{
+  color: white;
+  font-size: 25px;
+  transition: all .6s;
+}
+.btn-basket:hover,
+.btn-basket:active {
+  color: $red;
+  transition: all .6s;
+}
+
+.btn-info{
+  position: relative;
+  z-index: 999;
+  display: block;
+  color: white;
+  font-size: 16px;
+  background-color: $red;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 25px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px 1px $red;
+  transition: all .4s;
+}
+.btn-info:hover,
+.btn-info:active{
+  background-color: rgb(240, 52, 52);
+  box-shadow: 0px 0px 10px 2px rgb(240, 52, 52);
+  transition: all .4s;
+}

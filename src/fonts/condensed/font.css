@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'RobotoCondensed-Bold';
+  src: url('RobotoCondensed-Bold.eot');
+  src: url('RobotoCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+       url('RobotoCondensed-Bold.svg#RobotoCondensed-Bold') format('svg'),
+       url('RobotoCondensed-Bold.ttf') format('truetype'),
+       url('RobotoCondensed-Bold.woff') format('woff'),
+       url('RobotoCondensed-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Light';
+    src: url('RobotoCondensed-Light.eot');
+    src: url('RobotoCondensed-Light.eot?#iefix') format('embedded-opentype'),
+    url('RobotoCondensed-Light.svg#RobotoCondensed-Light') format('svg'),
+    url('RobotoCondensed-Light.ttf') format('truetype'),
+    url('RobotoCondensed-Light.woff') format('woff'),
+    url('RobotoCondensed-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Regular';
+    src: url('RobotoCondensed-Regular.eot');
+    src: url('RobotoCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+    url('RobotoCondensed-Regular.svg#RobotoCondensed-Regular') format('svg'),
+    url('RobotoCondensed-Regular.ttf') format('truetype'),
+    url('RobotoCondensed-Regular.woff') format('woff'),
+    url('RobotoCondensed-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
