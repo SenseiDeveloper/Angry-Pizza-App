@@ -27,6 +27,9 @@
     font-family: 'RobotoCondensed-Light';
     font-size: 16px;
   }
+  .inputError{
+    border-bottom:2px solid rgb(246, 71, 71);
+  }
 }
 @media (min-width: 640px){
   .auth{

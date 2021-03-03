@@ -46,6 +46,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+.labelError{
+  color: $red;
+}
+input:focus {
+  outline: none !important;
+  border:1px solid dodgerblue;
+}
 
 .bgGrey{
   background-color: #f6f6f6;
@@ -143,6 +150,25 @@ button{
 .btn-auth:hover,
 .btn-auth:active{
   background: radial-gradient(circle, rgba(14,99,103,1) 0%, rgba(36,44,62,1) 100%);
+  transition: all .4s;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
+}
+
+.btn-disable{
+  background-color: gainsboro;
+  transition: all .4s;
+  color: black;
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 8px 30px;
+  border-radius: 25px;
+  margin: 0 auto;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+.btn-auth:hover,
+.btn-auth:active{
+  background-color: gainsboro;
   transition: all .4s;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
 }
