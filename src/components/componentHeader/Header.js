@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import './Header.scss';
 
@@ -9,11 +10,7 @@ import {Navigation} from '../nav';
 import {ModalMenu} from '../modalMenu';
 
 export const Header = () => {
-    const [showMenu, setShowMenu] = useState(false);
-
-    const handleMenuStatus = () => {
-        setShowMenu(!showMenu);
-    };
+    const showMenu = useSelector( state => state.menu.mobileMenu);
 
   return (
    <header>
@@ -24,7 +21,7 @@ export const Header = () => {
                </div>
                <div className="menu">
                    <Navigation />
-                   <ButtonOpenMobileMenu handleMenuStatus={handleMenuStatus}/>
+                   <ButtonOpenMobileMenu />
                    <ButtonBasket />
                     <CSSTransition
                         in={showMenu}
@@ -32,7 +29,7 @@ export const Header = () => {
                         classNames="menu"
                         unmountOnExit
                    >
-                       <ModalMenu handleMenuStatus={handleMenuStatus}/>
+                       <ModalMenu />
                    </CSSTransition>
                </div>
            </div>

@@ -1,0 +1,128 @@
+$red: rgb(226, 106, 106);
+
+.menu-enter {
+  opacity: 0;
+  transform: translate3d(-50%,0,0);
+}
+.menu-enter-active {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  transition: opacity 300ms, transform 300ms;
+}
+.menu-exit {
+  opacity: 1;
+}
+.menu-exit-active {
+  opacity: 0;
+  transform: translate3d(-50%,0,0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+section.pizza {
+  .innerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sectionNavigation {
+      background-color: #212939;
+      min-height: calc(100vh - 85px);
+      .wrapList{
+        position: relative;
+        .iconList {
+          margin: 0;
+          padding: 0;
+          li {
+            color: white;
+            padding:10px;
+            font-size: 21px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            text-align: center;
+          }
+          .activeLi {
+            background-color: $red;
+          }
+      }
+        .subInfoIcon {
+          margin: 0;
+          padding: 0;
+          z-index: 2;
+          position: absolute;
+          top: 0;
+          left: 44px;
+          background-color: #2a3448;
+          width: calc(100vw - 44px);
+          min-height: calc(100vh - 85px);
+          li {
+            list-style: none;
+            padding:10px;
+            text-transform: uppercase;
+            font-family: 'RobotoCondensed-Light';
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            height: 45px;
+            cursor: pointer;
+            transition: all .5s;
+          }
+          li:hover{
+            background-color: #212939;
+            transition: all .5s;
+          }
+          li a:hover,
+          li a:active{
+            color: $red;
+            transition: all .5s;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 640px){
+  section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
+    width: 40vw;
+  }
+}
+@media (min-width: 768px){
+  section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
+    width: 30vw;
+  }
+}
+@media (min-width: 1024px){
+  section.pizza .innerSection .sectionNavigation .wrapList {
+    .iconList li {
+      font-size: 25px;
+      width: 50px;
+      height: 50px;
+    }
+    .subInfoIcon {
+      left: 50px;
+      li{
+        height: 50px;
+        font-size: 17px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+@media (min-width: 1440px){
+  section.pizza .innerSection .sectionNavigation .wrapList {
+    .iconList li {
+      font-size: 28px;
+      width: 55px;
+      height: 55px;
+    }
+    .subInfoIcon {
+      left: 55px;
+      width: 20vw;
+      li{
+        height: 55px;
+        font-size: 18px;
+        line-height: 40px;
+      }
+    }
+  }
+}

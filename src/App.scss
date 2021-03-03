@@ -12,6 +12,10 @@ body{
   min-width: 320px;
   overflow-x: hidden;
 }
+a{
+  color: white;
+  text-decoration: none;
+}
 
 html{
   box-sizing: border-box;
@@ -25,6 +29,27 @@ h1,h2,h3,h4,h5{
 }
 p{
   font-family: 'RobotoCondensed-Light';
+}
+
+input[type=text],
+input[type=password],
+input[type=number]{
+  width: 100%;
+  padding:10px;
+  margin:10px 0;
+  border: 0;
+  border-bottom:2px solid #181e2a;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.bgGrey{
+  background-color: #f6f6f6;
+  min-height: calc(100vh - 85px);
 }
 
 .container{
@@ -58,6 +83,7 @@ button{
   border: none;
   outline: none;
   cursor: pointer;
+  font-family: 'RobotoCondensed-Light';
 }
 
 .btn-mobile-menu{
@@ -86,7 +112,6 @@ button{
   position: relative;
   z-index: 999;
   display: block;
-  color: white;
   font-size: 16px;
   background-color: $red;
   text-transform: uppercase;
@@ -101,4 +126,23 @@ button{
   background-color: rgb(240, 52, 52);
   box-shadow: 0px 0px 10px 2px rgb(240, 52, 52);
   transition: all .4s;
+}
+
+.btn-auth{
+  background: radial-gradient(circle, rgba(11,76,79,1) 0%, rgba(24,30,42,1) 100%);
+  color: white;
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 8px 30px;
+  border-radius: 25px;
+  margin: 0 auto;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.btn-auth:hover,
+.btn-auth:active{
+  background: radial-gradient(circle, rgba(14,99,103,1) 0%, rgba(36,44,62,1) 100%);
+  transition: all .4s;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
 }

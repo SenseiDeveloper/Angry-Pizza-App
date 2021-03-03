@@ -1,0 +1,58 @@
+.auth{
+  background: rgb(11,76,79);
+  background: radial-gradient(circle, rgba(11,76,79,1) 0%, rgba(24,30,42,1) 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 85px);
+  box-shadow: inset 0px 5px 10px 0px rgba(0,0,0,0.75);
+  padding: 20px;
+  form{
+    width: 90%;
+    background: white;
+    padding: 20px;
+    border-radius: 3px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    a{
+      color: #181e2a;
+      text-decoration: underline;
+    }
+  }
+  label{
+    font-family: 'RobotoCondensed-Light';
+    font-size: 16px;
+  }
+}
+@media (min-width: 640px){
+  .auth{
+    form{
+      width: 60%;
+    }
+  }
+}
+@media (min-width: 768px){
+  .auth{
+    form{
+      width: 40%;
+    }
+  }
+}
+@media (min-width: 1024px){
+  .auth{
+    form{
+      width: 30%;
+    }
+  }
+}
+@media (min-width: 1440px){
+  .auth{
+    form{
+      width: 20%;
+    }
+  }
+}
