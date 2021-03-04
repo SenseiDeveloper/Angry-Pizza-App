@@ -85,12 +85,46 @@ input:focus {
   }
 }
 
+section{
+  h3{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+  p{
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px){
+  section{
+    h3{
+      font-size: 19px;
+    }
+    p{
+      font-size: 17px;
+    }
+  }
+}
+@media (min-width: 1024px){
+  section{
+    h3{
+      font-size: 20px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+}
+
 button{
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
   font-family: 'RobotoCondensed-Light';
+  border-radius: 25px;
+  text-transform: uppercase;
 }
 
 .btn-mobile-menu{
@@ -121,9 +155,7 @@ button{
   display: block;
   font-size: 16px;
   background-color: $red;
-  text-transform: uppercase;
   padding: 10px 30px;
-  border-radius: 25px;
   margin: 20px auto;
   box-shadow: 0px 0px 10px 1px $red;
   transition: all .4s;
@@ -136,19 +168,19 @@ button{
 }
 
 .btn-auth{
+  background: rgb(11,76,79);
   background: radial-gradient(circle, rgba(11,76,79,1) 0%, rgba(24,30,42,1) 100%);
   color: white;
   display: block;
   font-size: 15px;
-  text-transform: uppercase;
   padding: 8px 30px;
-  border-radius: 25px;
   margin: 0 auto;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
 .btn-auth:hover,
 .btn-auth:active{
+  background: rgb(11,76,79);
   background: radial-gradient(circle, rgba(14,99,103,1) 0%, rgba(36,44,62,1) 100%);
   transition: all .4s;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
@@ -160,9 +192,7 @@ button{
   color: black;
   display: block;
   font-size: 15px;
-  text-transform: uppercase;
   padding: 8px 30px;
-  border-radius: 25px;
   margin: 0 auto;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
@@ -171,4 +201,10 @@ button{
   background-color: gainsboro;
   transition: all .4s;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
+}
+
+.btn-primary{
+  a{
+    color: black;
+  }
 }

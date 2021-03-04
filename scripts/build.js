@@ -76,7 +76,7 @@ checkBrowsers(paths.appPath, isInteractive)
         console.log(
           '\nSearch for the ' +
             chalk.underline(chalk.yellow('keywords')) +
-            ' to learn more about each warning.'
+            ' to learn more promotions each warning.'
         );
         console.log(
           'To ignore, add ' +

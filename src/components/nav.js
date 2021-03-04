@@ -13,8 +13,8 @@ export const Navigation = () => {
           <ul>
               <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/home">Головна</Link></li>
               <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/pizza">Піца</Link></li>
-              <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/delivery">Доставка</Link></li>
-              <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/about">Про нас</Link></li>
+              <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/promotions">Акції</Link></li>
+              <li><Link onClick={() => dispatch(setStatusMenu(false))} to="/info">Інфо</Link></li>
               <li><ButtonBasket /></li>
           </ul>
       </nav>
