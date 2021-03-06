@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {useFormik} from "formik";
-import {validateLogin} from "../../../helpers/validators";
+import {validate} from "../../../helpers/validatorLog";
 
 export const Login = () => {
     const formik = useFormik({
@@ -9,7 +9,7 @@ export const Login = () => {
             phone: '',
             password: ''
         },
-        validateLogin,
+        validate,
         onSubmit: values => {
             //console.log(values);
             console.log(formik.errors);
@@ -27,6 +27,7 @@ export const Login = () => {
                 type="number"
                 onChange={formik.handleChange}
                 value={formik.values.phone}
+                onBlur={formik.handleBlur}
                 placeholder="Телефон"
             />
             <label className={formik.touched.password && formik.errors.password ? 'labelError': ''}>
@@ -39,6 +40,7 @@ export const Login = () => {
                 type="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
+                onBlur={formik.handleBlur}
                 placeholder="Пароль"
             />
             <p>У вас немає аккаунту? <Link to="/auth/registration">Зареєструватись</Link></p>

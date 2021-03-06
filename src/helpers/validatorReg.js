@@ -1,4 +1,4 @@
-export const validateRegistration = values => {
+export const validate = values => {
     const errors = {};
     if (!values.name) {
         errors.name = "Поле обов'язкове";
@@ -8,7 +8,7 @@ export const validateRegistration = values => {
 
     if (!values.phone) {
         errors.phone = "Поле обов'язкове";
-    } else if(values.phone.length > 10) {
+    } else if(10 < values.phone.length < 12) {
         errors.phone = 'Невірний номер';
     }
 
@@ -25,16 +25,3 @@ export const validateRegistration = values => {
     return errors;
 };
 
-export const validateLogin = values => {
-    const errors = {};
-
-    if (!values.phone) {
-        errors.phone = "Поле обов'язкове";
-    }
-
-    if (!values.password) {
-        errors.password = "Поле обов'язкове";
-    }
-
-    return errors;
-};
