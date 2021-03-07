@@ -34,7 +34,7 @@ export const Registration = () => {
     });
     return (
         <>
-            <form onSubmit={formik.touched.name && formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit}>
                 <label className={ formik.errors.name ? 'labelError': ''}>
                     {formik.touched.name && formik.errors.name ? <>{formik.errors.name}</> : "Iм'я"}
                 </label>

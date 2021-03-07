@@ -1,7 +1,7 @@
-#Start project:
-- `- npm start;`
- - `cd server;`
- - `nodemon server;`
+# Start project:
+- `- npm start`
+ - `cd server`
+ - `node server`
 
 # Development:
 
