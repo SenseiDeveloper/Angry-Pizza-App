@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {setStatusVerticalMenu} from '../redux/action/menuAction';
 import { CSSTransition } from 'react-transition-group';
@@ -12,18 +11,14 @@ import {GiFullPizza} from 'react-icons/gi';
 import {IoMdPizza} from 'react-icons/io';
 import {AiFillShop} from 'react-icons/ai';
 
-export const PizzaNavigation = () => {
+export const PizzaNavigation = ({authStatus}) => {
     const showMenu = useSelector(state => state.menu.horizontalMenu);
     const dispatch = useDispatch();
-
-    const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
-    const menuStatus = !token && !user;
 
     return (
         <div className="wrapList">
             {
-                menuStatus ?
+                authStatus ?
                     <ul className="iconList" onClick={() => dispatch(setStatusVerticalMenu())}>
                         <li className={showMenu ? 'activeLi' : ''}><AiOutlineMenuUnfold/></li>
                         <li><BiUserCircle/></li>
@@ -43,23 +38,8 @@ export const PizzaNavigation = () => {
                 classNames="menu"
                 unmountOnExit
             >
-                <SubPizzaNavigation menuStatus={menuStatus}/>
+                <SubPizzaNavigation menuStatus={authStatus}/>
             </CSSTransition>
         </div>
-        /*<div className="wrapList">
-            <ul className="iconList" onClick={() => dispatch(setStatusVerticalMenu())}>
-                <li className={showMenu ? 'activeLi' : ''}><AiOutlineMenuUnfold/></li>
-                <li><BiUserCircle/></li>
-                <li><FiUserPlus/></li>
-            </ul>
-            <CSSTransition
-                in={showMenu}
-                timeout={300}
-                classNames="menu"
-                unmountOnExit
-            >
-                <SubPizzaNavigation />
-            </CSSTransition>
-        </div>*/
     );
 };

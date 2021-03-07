@@ -1,3 +1,8 @@
+#Start project:
+- `- npm start;`
+ - `cd server;`
+ - `nodemon server;`
+
 # Development:
 
 - use scss;
@@ -7,13 +12,10 @@
 - use React Formik;
 - use Redux Saga;
 - use Node Express server;
-- use nodemon;
 
 
 # notes:
 - add page not found;
-- add active class in route;
 - add lezyloading;
 
-+ Work: 
-  + close mobile menu after click;
+

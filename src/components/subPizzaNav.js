@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export const SubPizzaNavigation = ({menuStatus}) => {
     return (
@@ -8,15 +8,15 @@ export const SubPizzaNavigation = ({menuStatus}) => {
                 menuStatus ?
                     <ul className="subInfoIcon">
                         <li></li>
-                        <li><Link to="/auth/login">Увійти</Link></li>
-                        <li><Link to="/auth/registration">Зареєструватись</Link></li>
+                        <li><NavLink activeClassName="active-nav" to="/auth/login">Увійти</NavLink></li>
+                        <li><NavLink activeClassName="active-nav" to="/auth/registration">Зареєструватись</NavLink></li>
                     </ul>
                 :
                     <ul className="subInfoIcon">
                         <li></li>
-                        <li><Link to="/pizza">Піца</Link></li>
-                        <li><Link to="/pizza">Моя піца</Link></li>
-                        <li><Link to="/pizza">Покупки</Link></li>
+                        <li><NavLink activeClassName="active-nav" to="/pizza/shop">Піца</NavLink></li>
+                        <li><NavLink activeClassName="active-nav" to="/pizza/list">Моя піца</NavLink></li>
+                        <li><NavLink activeClassName="active-nav" to="/pizza/history">Покупки</NavLink></li>
                     </ul>
             }
         </>

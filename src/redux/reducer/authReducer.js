@@ -36,6 +36,15 @@ export const authReducer = (state = stateAuth, action) => {
                 isAuthenticated: false,
                 user: null
             };
+        case typeActions.AUTH_LOGOUT_USER:
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            return {
+                token: localStorage.getItem('token'),
+                isRegistered: false,
+                isAuthenticated: false,
+                user: null
+        };
         default:
             return state;
     }

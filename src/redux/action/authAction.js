@@ -28,3 +28,7 @@ export const loginUserSuccess = payload => ({
 export const loginUserError = () => ({
     type: typeActions.AUTH_LOGIN_ERROR
 });
+
+export const logoutUser = () => ({
+    type: typeActions.AUTH_LOGOUT_USER
+});

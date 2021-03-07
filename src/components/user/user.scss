@@ -1,0 +1,53 @@
+.user{
+  background-color: #212939;
+  box-shadow:0 0 15px 2px rgba(0,0,0,0.5);
+  margin: 5px;
+  display: flex;
+  .icon{
+    background: rgb(11,76,79);
+    background: radial-gradient(circle, rgba(14,99,103,1) 0%, rgba(36,44,62,1) 100%);
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px;
+    align-items: center;
+    display: flex;
+  }
+  .userData{
+    width: 100%;
+    padding: 10px 10px;
+    color: white;
+    font-size: 20px;
+    p,h5{
+      margin: 0;
+      padding: 0;
+    }
+  }
+  button{
+    color: white;
+    font-size: 14px;
+    background-color: rgb(34, 167, 240);
+    padding: 5px 10px;
+    border-radius: 0;
+    transition: all .4s;
+  }
+  @media (min-width: 768px){
+    button{
+      font-size: 15px;
+      padding: 5px 15px;
+    }
+  }
+  button:hover,
+  button:active{
+    background-color: rgb(25, 181, 254);
+    transition: all .4s;
+  }
+}
+@media (min-width: 768px){
+  .user{
+    margin: 10px;
+  }
+}
+/*@media (min-width: 640px);
+@media (min-width: 768px);
+@media (min-width: 1024px);
+@media (min-width: 1440px);*/

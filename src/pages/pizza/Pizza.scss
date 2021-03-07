@@ -22,8 +22,23 @@ $red: rgb(226, 106, 106);
 section.pizza {
   .innerSection {
     display: flex;
-    justify-content: space-between;
-    //align-items: center;
+    flex-direction: row;
+
+    .contentBlock{
+      width: 100%;
+    }
+    @media (min-width: 1024px){
+      .contentBlock{
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+    }
+    @media (min-width: 1440px){
+      .contentBlock{
+        max-width: 1200px;
+      }
+    }
 
     .sectionNavigation {
       background-color: #212939;
@@ -41,6 +56,7 @@ section.pizza {
             width: 45px;
             height: 45px;
             text-align: center;
+            cursor: pointer;
           }
           .activeLi {
             background-color: $red;
@@ -56,6 +72,9 @@ section.pizza {
           background-color: #2a3448;
           width: calc(100vw - 44px);
           min-height: calc(100vh - 85px);
+          .active-nav{
+            color: $red;
+          }
           li {
             list-style: none;
             padding:10px;
@@ -83,12 +102,12 @@ section.pizza {
 }
 @media (min-width: 640px){
   section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
-    width: 40vw;
+    width: 30vw;
   }
 }
 @media (min-width: 768px){
   section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
-    width: 30vw;
+    width: 25vw;
   }
 }
 @media (min-width: 1024px){
@@ -117,7 +136,7 @@ section.pizza {
     }
     .subInfoIcon {
       left: 55px;
-      width: 20vw;
+      width: 15vw;
       li{
         height: 55px;
         font-size: 18px;
