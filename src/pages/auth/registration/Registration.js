@@ -6,15 +6,15 @@ import {useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 
 
-import {registerUser} from '../../../redux/action/authAction';
+import {fetchRegisterUser} from '../../../redux/action/authAction';
 
 export const Registration = () => {
     const dispatch = useDispatch();
-    const isRegistered = useSelector(state => state.auth);
+    const isRegistered = useSelector(state => state.auth.isRegistered);
     const history = useHistory();
 
     useEffect(()=> {
-        if(isRegistered.isRegistered){
+        if(isRegistered){
             history.push("/auth/login");
         }
     }, [isRegistered]);
@@ -29,7 +29,7 @@ export const Registration = () => {
         validate,
         onSubmit: values => {
             const {name,phone,password} = values;
-            dispatch(registerUser({name,phone,password}));
+            dispatch(fetchRegisterUser({name,phone,password}));
         },
     });
     return (

@@ -8,7 +8,9 @@ export const validate = values => {
 
     if (!values.phone) {
         errors.phone = "Поле обов'язкове";
-    } else if(10 < values.phone.length < 12) {
+    } else if(9 > values.phone.toString().length) {
+        errors.phone = 'Невірний номер';
+    } else if(13 < values.phone.toString().length){
         errors.phone = 'Невірний номер';
     }
 

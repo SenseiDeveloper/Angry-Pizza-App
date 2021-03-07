@@ -1,9 +1,12 @@
 import {setStatusMenu} from './menuAction';
 import {setStatusVerticalMenu} from './menuAction';
 
-import {registerUser} from './authAction'
+import {fetchRegisterUser} from './authAction'
 import {registerUserSuccess} from './authAction';
 import {registerUserError} from './authAction';
+import {fetchLoginUser} from './authAction';
+import {loginUserSuccess} from './authAction';
+import {loginUserError} from './authAction';
 
 import {setMessage} from './messageAction';
 import {clearMessage} from './messageAction';
@@ -11,9 +14,12 @@ import {clearMessage} from './messageAction';
 export default {
     setStatusMenu,
     setStatusVerticalMenu,
-    registerUser,
+    fetchRegisterUser,
     registerUserSuccess,
     registerUserError,
+    fetchLoginUser,
+    loginUserSuccess,
+    loginUserError,
     setMessage,
     clearMessage
 }

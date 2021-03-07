@@ -1,9 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Link} from "react-router-dom";
 import {useFormik} from "formik";
 import {validate} from "../../../helpers/validatorLog";
+import {useDispatch, useSelector} from "react-redux";
+
+import {fetchLoginUser} from '../../../redux/action/authAction';
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const history = useHistory();
+
+    useEffect(()=> {
+        if(isAuthenticated){
+            history.push("/pizza");
+        }
+    }, [isAuthenticated]);
+
     const formik = useFormik({
         initialValues: {
             phone: '',
@@ -11,8 +25,7 @@ export const Login = () => {
         },
         validate,
         onSubmit: values => {
-            //console.log(values);
-            console.log(formik.errors);
+            dispatch(fetchLoginUser(values));
         },
     });
     return (

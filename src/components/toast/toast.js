@@ -16,14 +16,17 @@ const Toast = () => {
             message.status === 'info' ? infoIcon : warningIcon;
 
     useEffect( () => {
-        const interval = setInterval( () => {
-            dispatch(clearMessage());
-        },5000);
+        let inteval;
+        if (message.message.length !== 0){
+             inteval = setInterval( () => {
+                dispatch(clearMessage());
+            },5000);
+        }
 
         return () => {
-            clearInterval(interval);
+            clearInterval(inteval);
         }
-    },[]);
+    },[message]);
 
     return (
         <>

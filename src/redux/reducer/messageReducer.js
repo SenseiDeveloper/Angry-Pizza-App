@@ -10,7 +10,7 @@ export const messageReducer = ( state = stateMessage, action) => {
     switch (action.type) {
         case typeActions.SET_MESSAGE:
             return {
-                message: action.payload.text,
+                message: action.payload.message,
                 status: action.payload.status,
                 show: true
             };
