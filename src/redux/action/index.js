@@ -1,16 +1,22 @@
-import {setStatusMenu} from './menuAction';
-import {setStatusVerticalMenu} from './menuAction';
+import {setStatusMenu,setStatusVerticalMenu} from './menuAction';
 
-import {fetchRegisterUser} from './authAction'
-import {registerUserSuccess} from './authAction';
-import {registerUserError} from './authAction';
-import {fetchLoginUser} from './authAction';
-import {loginUserSuccess} from './authAction';
-import {loginUserError} from './authAction';
-import {logoutUser} from './authAction';
+import {
+    fetchRegisterUser,
+    registerUserSuccess,
+    registerUserError,
+    fetchLoginUser,
+    loginUserSuccess,
+    loginUserError,
+    logoutUser
+} from './authAction'
 
-import {setMessage} from './messageAction';
-import {clearMessage} from './messageAction';
+import {
+    fetchProducts,
+    getProductsSuccess,
+    getProductsError
+} from './pizzaConstructorAction';
+
+import {clearMessage,setMessage} from './messageAction';
 
 export default {
     setStatusMenu,
@@ -22,6 +28,9 @@ export default {
     loginUserSuccess,
     loginUserError,
     logoutUser,
+    fetchProducts,
+    getProductsSuccess,
+    getProductsError,
     setMessage,
     clearMessage
 }

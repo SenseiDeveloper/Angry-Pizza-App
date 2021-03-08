@@ -20,3 +20,10 @@ export const loginUser = (data) => {
         body: JSON.stringify(data)
     });
 };
+
+export const loadProducts = () => {
+    return fetch(`${config.baseURL}/pizza-products`,{
+        headers,
+        method: "GET",
+    });
+};

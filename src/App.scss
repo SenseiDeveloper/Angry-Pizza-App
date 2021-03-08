@@ -203,9 +203,31 @@ button{
   box-shadow:0 0 15px 4px rgba(0,0,0,0.4);
 }
 
+.btn{
+  font-size: 15px;
+  border-radius: 0;
+  padding: 8px 12px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+  display: block;
+  margin: 10px auto;
+  transition: all .4s;
+  color: white;
+}
+
+.btn-secondary{
+  background-color: rgb(34, 167, 240);
+}
+.btn-secondary:hover,
+.btn-secondary:active{
+  background-color: rgb(25, 181, 254);
+  transition: all .4s;
+}
 
 .btn-primary{
-  a{
-    color: black;
-  }
+  background-color: $red;
+}
+.btn-primary:hover,
+.btn-primary:active{
+  background-color: rgb(240, 52, 52);
+  transition: all .4s;
 }

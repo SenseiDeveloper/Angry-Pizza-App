@@ -16,6 +16,8 @@
 
 # notes:
 - add page not found;
-- add lezyloading;
-
+- add lezy loading;
+- add new menu;
+- correct design;
+- fix error;
 

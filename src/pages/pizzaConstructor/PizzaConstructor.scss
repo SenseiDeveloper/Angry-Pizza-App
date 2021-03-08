@@ -1,0 +1,126 @@
+section.pizzaConstructor{
+  padding:10px;
+  .productTitle{
+    margin: 0;
+  }
+  .imagePizzaConstructor{
+    img{
+      width: 100%;
+    }
+  }
+  @media (min-width: 1024px){
+    .imagePizzaConstructor{
+      width: 50%;
+    }
+  }
+  .summaryPizza{
+    margin: 10px 0;
+    h5{
+      font-size: 16px;
+      padding: 0;
+      margin: 0;
+    }
+    button{
+      display: block;
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px){
+    .summaryPizza{
+      width: 45%;
+    }
+  }
+  .orderProducts{
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgba(44, 62, 80,1);
+        border-radius: 3px;
+        color: white;
+        padding: 0 10px;
+        margin: 5px 0;
+        button{
+          color: rgb(246, 71, 71);
+          font-size: 15px;
+        }
+        .right{
+          display: flex;
+
+          button{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 768px){
+    .orderProducts{
+      width: 50%;
+    }
+  }
+  .productsPizza{
+    margin: 10px 0;
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: inline-block;
+        background: rgba(27,33,45,1);
+        background: radial-gradient(circle, rgba(142,29,29,1) 0%, rgba(27,33,45,1) 100%);
+        color: white;
+        margin: 5px;
+        border-radius: 3px;
+        p{
+          margin: 0;
+          padding: 5px;
+          background-color: rgba(44, 62, 80,.8);
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          text-align: center;
+        }
+          .icon{
+            padding: 10px;
+            img{
+              width: 70px;
+              height: 35px;
+              display: block;
+              margin: 0 auto;
+            }
+          }
+      }
+    }
+  }
+  @media (min-width: 1024px){
+    .productsPizza{
+      width: 45%;
+    }
+  }
+}
+@media (min-width: 768px){
+  section.pizzaConstructor{
+    .innerBlockSecond{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+@media (min-width: 1024px){
+  section.pizzaConstructor{
+    .innerBlockFirst{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+/*
+@media (min-width: 1024px);
+@media (min-width: 1440px);*/

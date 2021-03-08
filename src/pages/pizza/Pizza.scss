@@ -24,18 +24,25 @@ section.pizza {
     display: flex;
     flex-direction: row;
 
-    .contentBlock{
+    .sectionContent{
       width: 100%;
+      .pizzaShop{
+        margin: 10px 5px;
+        button{
+          float: right;
+          margin: 0;
+        }
+      }
     }
     @media (min-width: 1024px){
-      .contentBlock{
+      .sectionContent{
         width: 100%;
         max-width: 1024px;
         margin: 0 auto;
       }
     }
     @media (min-width: 1440px){
-      .contentBlock{
+      .sectionContent{
         max-width: 1200px;
       }
     }

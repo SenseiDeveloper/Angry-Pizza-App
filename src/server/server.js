@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const users = require('./dataBase/user.service');
+const getProducts = require('./dataBase/constructor.service');
 const jwt = require("jsonwebtoken");
 const accessTokenSecret = 'angrypizzaaccesstokensecret';
 
@@ -67,6 +68,11 @@ app.post('/api/create-user', cors(), function (req, res) {
     return res.status(400).send({
         isRegistered: false
     });
+});
+
+//API get products
+app.get('/api/pizza-products', cors(), (req,res) => {
+    res.status(200).send(JSON.stringify(getProducts()));
 });
 
 app.listen(9000, function () {

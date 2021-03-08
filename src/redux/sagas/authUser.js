@@ -38,7 +38,6 @@ export function* fetchLoginUser(action) {
                 .then(res => res.json())
         );
         if (response.isAuthenticated){
-            yield console.log(response);
             yield put(loginUserSuccess(response));
         }else {
             yield put(loginUserError());
