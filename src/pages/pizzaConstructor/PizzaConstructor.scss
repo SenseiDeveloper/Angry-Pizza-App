@@ -4,8 +4,19 @@ section.pizzaConstructor{
     margin: 0;
   }
   .imagePizzaConstructor{
-    img{
+    width: 100%;
+    position: relative;
+    .basis{
       width: 100%;
+      z-index: 1;
+    }
+    .products img{
+      width: 90%;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 15px;
+      margin-left: 5%;
     }
   }
   @media (min-width: 1024px){
@@ -69,6 +80,7 @@ section.pizzaConstructor{
       margin: 0;
       padding: 0;
       li{
+        cursor: pointer;
         list-style: none;
         display: inline-block;
         background: rgba(27,33,45,1);
@@ -93,6 +105,12 @@ section.pizzaConstructor{
               margin: 0 auto;
             }
           }
+      }
+      .active p{
+        background-color: rgba(44, 62, 80,0);
+      }
+      li:hover p{
+        background-color: rgba(44, 62, 80,0);
       }
     }
   }

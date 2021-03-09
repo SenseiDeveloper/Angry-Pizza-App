@@ -7,6 +7,7 @@ export const SelectBasis = ({product}) => {
                 product &&
                 <li key={product.id}>
                     <p>{product.name}</p>
+                    <p>{product.price} грн.</p>
                 </li>
             }
         </ul>

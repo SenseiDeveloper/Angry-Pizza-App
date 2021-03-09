@@ -13,7 +13,12 @@ import {
 import {
     fetchProducts,
     getProductsSuccess,
-    getProductsError
+    getProductsError,
+    setSelectBasis,
+    setSelectProduct,
+    countIncrementSelectProducts,
+    countDecrementSelectProducts,
+    removeSelectProduct
 } from './pizzaConstructorAction';
 
 import {clearMessage,setMessage} from './messageAction';
@@ -31,6 +36,11 @@ export default {
     fetchProducts,
     getProductsSuccess,
     getProductsError,
+    setSelectBasis,
+    setSelectProduct,
+    countIncrementSelectProducts,
+    countDecrementSelectProducts,
+    removeSelectProduct,
     setMessage,
     clearMessage
 }

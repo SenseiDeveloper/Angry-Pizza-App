@@ -4,11 +4,13 @@ const products = {
             id: 1,
             name: 'Томатна основа',
             icon: 'images/icon_products/basis-tomate.svg',
+            price: 16
         },
         {
             id: 2,
             name: 'Вершкова основа',
             icon: 'images/icon_products/basis-cream.svg',
+            price: 16
         }
     ],
     cheeses: [
@@ -18,6 +20,7 @@ const products = {
             name: 'Сир королівський',
             weight: 50,
             price: 29,
+            type: 'cheeses',
             icon: 'images/icon_products/king-cheese.svg',
             image: 'images/image_products/king-chesee.svg'
         },
@@ -27,6 +30,7 @@ const products = {
             name: 'Сир дор-блю',
             weight: 50,
             price: 39,
+            type: 'cheeses',
             icon: 'images/icon_products/dor-blue-cheese.svg',
             image: 'images/image_products/dor-blue.svg'
         },
@@ -36,6 +40,7 @@ const products = {
             name: 'Сир пармезан',
             weight: 50,
             price: 39,
+            type: 'cheeses',
             icon: 'images/icon_products/parmesan-cheese.svg',
             image: 'images/image_products/parmezan.svg'
         }, {
@@ -44,6 +49,7 @@ const products = {
             name: 'Сир моцарелла',
             weight: 50,
             price: 20,
+            type: 'cheeses',
             icon: 'images/icon_products/mocarella-cheese.svg',
             image: 'images/image_products/mocarella.svg'
         }
@@ -53,6 +59,7 @@ const products = {
             name: 'Сир фета',
             weight: 50,
             price: 20,
+            type: 'cheeses',
             icon: 'images/icon_products/feta-cheese.svg',
             image: 'images/image_products/feta.svg'
         }
@@ -64,8 +71,9 @@ const products = {
             name: 'Бекон',
             weight: 50,
             price: 20,
+            type: 'meat',
             icon: 'images/icon_products/bacon-meat.svg',
-            image: ''
+            image: 'images/image_products/bacon.svg'
         },
         {
             id: 7,
@@ -73,8 +81,9 @@ const products = {
             name: 'Шинка',
             weight: 50,
             price: 22,
+            type: 'meat',
             icon: 'images/icon_products/ham-meat.svg',
-            image: ''
+            image: 'images/image_products/ham.svg'
         },
         {
             id: 8,
@@ -82,8 +91,9 @@ const products = {
             name: 'Курка',
             weight: 50,
             price: 20,
+            type: 'meat',
             icon: 'images/icon_products/chicken-meat.svg',
-            image: ''
+            image: 'images/image_products/chicken.svg'
         },
         {
             id: 11,
@@ -91,8 +101,9 @@ const products = {
             name: 'Салямі',
             weight: 50,
             price: 22,
+            type: 'meat',
             icon: 'images/icon_products/salami-meat.svg',
-            image: ''
+            image: 'images/image_products/salami.svg'
         },
         {
             id: 9,
@@ -100,8 +111,9 @@ const products = {
             name: 'Мисливські ковбаски',
             weight: 50,
             price: 22,
+            type: 'meat',
             icon: 'images/icon_products/sausages-meat.svg',
-            image: ''
+            image: 'images/image_products/sausages.svg'
         },
         {
             id: 10,
@@ -109,8 +121,9 @@ const products = {
             name: 'Папероні',
             weight: 50,
             price: 32,
+            type: 'meat',
             icon: 'images/icon_products/paperoni-meat.svg',
-            image: ''
+            image: 'images/image_products/paperoni.svg'
         },
         {
             id: 12,
@@ -118,8 +131,9 @@ const products = {
             name: 'Лосось',
             weight: 50,
             price: 54,
+            type: 'meat',
             icon: 'images/icon_products/salmon-meat.svg',
-            image: ''
+            image: 'images/image_products/salmon.svg'
         },
         {
             id: 13,
@@ -127,8 +141,9 @@ const products = {
             name: 'Крабові палички',
             weight: 50,
             price: 29,
+            type: 'meat',
             icon: 'images/icon_products/crab-steacs-meat.svg',
-            image: ''
+            image: 'images/image_products/crab.svg'
         }
     ],
     anyProducts: [
@@ -138,8 +153,9 @@ const products = {
             name: 'Помідори',
             weight: 50,
             price: 16,
+            type: 'anyProducts',
             icon: 'images/icon_products/tomatoes-any.svg',
-            image: ''
+            image: 'images/image_products/tomatoes.svg'
         },
         {
             id: 18,
@@ -147,8 +163,9 @@ const products = {
             name: 'Огірок',
             weight: 50,
             price: 14,
+            type: 'anyProducts',
             icon: 'images/icon_products/cucumber-any.svg',
-            image: ''
+            image: 'images/image_products/cucumber.svg'
         },
         {
             id: 15,
@@ -156,8 +173,9 @@ const products = {
             name: 'Вялені помідори',
             weight: 50,
             price: 22,
+            type: 'anyProducts',
             icon: 'images/icon_products/dried-tomatoes-any.svg',
-            image: ''
+            image: 'images/image_products/dried-tomatoes.svg'
         },
         {
             id: 16,
@@ -165,8 +183,9 @@ const products = {
             name: 'Гриби',
             weight: 50,
             price: 16,
+            type: 'anyProducts',
             icon: 'images/icon_products/mushrooms-any.svg',
-            image: ''
+            image: 'images/image_products/mushrooms.svg'
         },
         {
             id: 17,
@@ -174,8 +193,9 @@ const products = {
             name: 'Кукурудза',
             weight: 50,
             price: 16,
+            type: 'anyProducts',
             icon: 'images/icon_products/corn-any.svg',
-            image: ''
+            image: 'images/image_products/corn.svg'
         },
         {
             id: 19,
@@ -183,8 +203,9 @@ const products = {
             name: 'Болгарський перець',
             weight: 50,
             price: 15,
+            type: 'anyProducts',
             icon: 'images/icon_products/paprika-any.svg',
-            image: ''
+            image: 'images/image_products/paprika.svg'
         },
         {
             id: 20,
@@ -192,8 +213,9 @@ const products = {
             name: 'Чилі',
             weight: 5,
             price: 6,
+            type: 'anyProducts',
             icon: 'images/icon_products/chile-any.svg',
-            image: ''
+            image: 'images/image_products/chile.svg'
         },
         {
             id: 21,
@@ -201,8 +223,9 @@ const products = {
             name: 'Цибуля',
             weight: 50,
             price: 10,
+            type: 'anyProducts',
             icon: 'images/icon_products/onion-any.svg',
-            image: ''
+            image: 'images/image_products/onion.svg'
         },
         {
             id: 22,
@@ -210,8 +233,9 @@ const products = {
             name: 'Часник',
             weight: 25,
             price: 10,
+            type: 'anyProducts',
             icon: 'images/icon_products/garlic-any.svg',
-            image: ''
+            image: 'images/image_products/garlic.svg'
         },
         {
             id: 23,
@@ -219,8 +243,9 @@ const products = {
             name: 'Оливки',
             weight: 50,
             price: 18,
+            type: 'anyProducts',
             icon: 'images/icon_products/olives-any.svg',
-            image: ''
+            image: 'images/image_products/olives.svg'
         },
         {
             id: 24,
@@ -228,8 +253,9 @@ const products = {
             name: 'Ананас',
             weight: 50,
             price: 19,
+            type: 'anyProducts',
             icon: 'images/icon_products/pineapple-any.svg',
-            image: ''
+            image: 'images/image_products/pineapple.svg'
         },
         {
             id: 25,
@@ -237,8 +263,9 @@ const products = {
             name: 'Лимон',
             weight: 50,
             price: 14,
+            type: 'anyProducts',
             icon: 'images/icon_products/lemon-any.svg',
-            image: ''
+            image: 'images/image_products/lemon.svg'
         }
     ]
 };

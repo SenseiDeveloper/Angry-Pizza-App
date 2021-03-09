@@ -7,12 +7,13 @@ import {ProductPizza} from './productPizza';
 
 export const ProductsPizza = () => {
     const dispatch = useDispatch();
-    const products = useSelector(state => state.pizzaConstructor.products.data);
+    const productsStore = useSelector(state => state.pizzaConstructor.products.data);
     const loader = useSelector(state => state.pizzaConstructor.products.loading);
 
     useEffect(()=>{
         dispatch(fetchProducts());
     },[]);
+
 
     return(
         <div className="productsPizza">
@@ -20,13 +21,13 @@ export const ProductsPizza = () => {
                 loader ?
                     <>
                         <p className="productTitle">Основа</p>
-                        <ProductPizza product={products.basis}/>
+                        <ProductPizza product={productsStore.basis} />
                         <p className="productTitle">Сири</p>
-                        <ProductPizza product={products.cheeses}/>
+                        <ProductPizza product={productsStore.cheeses}/>
                         <p className="productTitle">Мясо та морепродукти</p>
-                        <ProductPizza product={products.meat}/>
+                        <ProductPizza product={productsStore.meat} />
                         <p className="productTitle">Овочі та фрукти</p>
-                        <ProductPizza product={products.anyProducts}/>
+                        <ProductPizza product={productsStore.anyProducts} />
                     </>
                     : <Loader />
             }
