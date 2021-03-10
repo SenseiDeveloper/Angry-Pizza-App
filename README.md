@@ -20,4 +20,9 @@
 - add new menu;
 - correct design;
 - fix error;
+- create new folder for routes;
+
+# page:
+- home - responsive;
+- auth page - responsive;
 

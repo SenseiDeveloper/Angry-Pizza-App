@@ -1,7 +1,7 @@
 import './App.scss';
 
-import {Header} from "./components/componentHeader/Header";
-import {Main} from "./components/componentMain/Main";
+import {Header} from './pages/header/Header';
+import {Main} from './pages/main/Main';
 import Toast from './components/toast/toast';
 
 function App() {

@@ -1,0 +1,388 @@
+$red: rgb(246, 71, 71);
+header {
+  background-color: rgba(24, 30, 42, 1);
+  padding: 10px 0;
+  height: 70px;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .user {
+      display: none;
+    }
+
+    .userMobile {
+      color: white;
+      position: relative;
+      font-size: 20px;
+      border-radius: 50px;
+      padding: 0 5px;
+      border: 2px solid $red;
+      text-align: center;
+      margin: -3px 0 3px;
+
+      .modalUser {
+        position: absolute;
+        background: rgba(0, 0, 0, .9);
+        z-index: 999;
+        right: 5%;
+        top: 35px;
+        padding: 10px;
+        border-radius: 3px;
+        width: 200px;
+
+        button {
+          color: white;
+          background-color: $red;
+          transition: all .4s;
+          width: 100%;
+          border-radius: 50px;
+          padding: 5px;
+          font-size: 15px;
+          margin-top: 10px;
+        }
+
+        button:hover,
+        button:active {
+          background-color: rgb(240, 52, 52);
+          transition: all .4s;
+        }
+
+        h5 {
+          font-size: 16px;
+          margin: 5px 0;
+          padding: 0;
+          color: white;
+          text-align: left;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-size: 15px;
+          color: white;
+          text-align: left;
+          margin: 0;
+          padding: 0;
+        }
+
+        a {
+          font-size: 16px;
+          display: block;
+          text-align: left;
+          text-transform: uppercase;
+          margin: 3px 0;
+        }
+
+        a:hover,
+        a:active {
+          color: $red;
+        }
+      }
+
+      .icon {
+        padding-top: 3px;
+        display: flex;
+      }
+    }
+
+    .userMobile:hover {
+      color: $red;
+    }
+
+    @media (min-width: 640px) {
+      .userMobile {
+        margin-top: 12px;
+        height: 35px;
+      }
+    }
+
+    .navigation {
+      display: none;
+    }
+
+    .menu-enter {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .menu-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    .menu-exit {
+      opacity: 1;
+    }
+
+    .menu-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    .modalMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .9);
+      width: 100%;
+      height: 100vh;
+      z-index: 9999;
+
+      button {
+        color: white;
+        font-size: 25px;
+        margin: 10px;
+        float: right;
+        transition: all .6s;
+      }
+
+      button:hover,
+      button:active {
+        color: $red;
+        transition: all .6s;
+      }
+
+      .navigation {
+        display: block;
+        margin: 100px 0;
+        text-align: center;
+
+        .active-mnu-li {
+          color: $red;
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+
+          li {
+            color: white;
+            display: block;
+            font-family: 'RobotoCondensed-Regular';
+            cursor: pointer;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            transition: all .6s;
+
+            .btn-basket {
+              display: none;
+            }
+          }
+
+          li:hover {
+            color: $red;
+            transition: all .6s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  header {
+    height: 80px;
+  }
+  .header-inner .menu {
+    .navigation {
+      display: block;
+
+      ul {
+        li {
+          position: relative;
+          color: white;
+          display: inline-block;
+          font-family: 'RobotoCondensed-Regular';
+          font-size: 18px;
+          line-height: 18px;
+          padding: 0 5px;
+          cursor: pointer;
+
+          .active-mnu-li {
+            color: $red;
+          }
+
+          .btn-basket {
+            display: inherit;
+            font-size: 22px;
+          }
+        }
+
+        li:before, li:after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease;
+        }
+
+        li:before {
+          left: 0;
+          bottom: -10px;
+          width: 100%;
+          height: 2px;
+          background: $red;
+          transform: scaleX(0);
+        }
+
+        li:hover:before {
+          transform: scale(1);
+        }
+      }
+    }
+
+    .btn-basket,
+    .btn-mobile-menu {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .header-inner {
+
+      .userMobile {
+        display: none;
+      }
+
+      .activeUser {
+        border: none;
+
+        .userInfo .text{
+          min-width: 60px;
+          margin-top: 3px;
+        }
+        .icon {
+          height: 35px;
+          background: rgb(34, 167, 240);
+          margin-top: 3px;
+        }
+
+        button {
+          font-size: 14px;
+          margin-top: 3px;
+          height: 35px;
+          background: $red;
+          border-radius: 50px;
+        }
+        button:hover{
+        background: rgb(240, 52, 52);
+        }
+      }
+
+      .inActiveUser {
+        border: 2px solid $red;
+
+        .userInfo .text{
+          min-width: 100px;
+        }
+
+        .icon {
+          background: $red;
+          margin-top: -1px;
+        }
+      }
+
+      .user {
+        display: flex;
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 40px;
+        color: white;
+        font-size: 20px;
+        border-radius: 50px;
+
+        .userPosition {
+          display: flex;
+        }
+
+        .userInfo {
+          padding: 0 5px;
+
+          h5 {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            text-transform: uppercase;
+          }
+
+          p {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+          }
+
+          a {
+            font-size: 13px;
+            margin: 0 5px;
+            text-transform: uppercase;
+            transition: all .5s;
+          }
+
+          a:hover,
+          a:active {
+            color: $red;
+            transition: all .5s;
+          }
+
+          .active-nav {
+            color: $red;
+          }
+        }
+
+        .icon {
+          display: flex;
+          border-radius: 50px;
+          padding: 8px 8px 0 8px;
+          margin-left: -2px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-inner .menu .navigation ul li {
+    font-size: 20px;
+    line-height: 20px;
+
+    .btn-basket {
+      font-size: 24px;
+    }
+
+    header .header-inner .user {
+      margin-top: 12px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  header .header-inner .logo img {
+    width: 180px;
+  }
+  .header-inner .menu .navigation ul li {
+    font-size: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+
+    .btn-basket {
+      font-size: 25px;
+    }
+  }
+}

@@ -32,6 +32,7 @@ app.post('/api/login', cors(), function (req,res) {
                 user: {
                     id: findUser.id,
                     name: findUser.name,
+                    coins: findUser.coins,
                     phone: findUser.phone
                 },
                 isAuthenticated: true
@@ -51,6 +52,7 @@ app.post('/api/create-user', cors(), function (req, res) {
         const user = {
             id: Date.now(),
             name,
+            coins: 0,
             phone,
             password
         };

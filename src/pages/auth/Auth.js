@@ -1,17 +1,23 @@
 import React from 'react';
 import './Auth.scss';
-
+import {authRoutes} from "../../routes/authRoutes";
 import {Switch,Route,Redirect} from "react-router-dom";
+
 import {Login} from "./login/Login";
 import {Registration} from "./registration/Registration";
+
+const components = {
+    Login,Registration
+};
 
 export const Auth = () => {
     return (
         <section className="auth">
                 <div className="container">
                     <Switch>
-                        <Route path="/auth/login" component={Login} />
-                        <Route path="/auth/registration" component={Registration} />
+                        {
+                            authRoutes.map(route => <Route path={route.path} component={components[route.component]} />)
+                        }
                         <Redirect exect from="/auth" to="/auth/login" />
                     </Switch>
                 </div>

@@ -3,11 +3,12 @@ import {useSelector} from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import './Header.scss';
 
-import {Logo} from '../logo';
-import {ButtonOpenMobileMenu} from '../buttons/buttonOpenMobileMenu';
-import {ButtonBasket} from '../buttons/buttonBasket';
-import {Navigation} from '../nav';
-import {ModalMenu} from '../modalMenu';
+import {Logo} from '../../components/logo';
+import {ButtonOpenMobileMenu} from '../../components/buttons/buttonOpenMobileMenu';
+import {ButtonBasket} from '../../components/buttons/buttonBasket';
+import {Navigation} from '../../components/nav';
+import {ModalMenu} from '../../components/modalMenu';
+import {ButtonUser} from '../../components/buttons/buttonUser';
 
 export const Header = () => {
     const showMenu = useSelector( state => state.menu.mobileMenu);
@@ -23,6 +24,7 @@ export const Header = () => {
                    <Navigation />
                    <ButtonOpenMobileMenu />
                    <ButtonBasket />
+                   <ButtonUser />
                     <CSSTransition
                         in={showMenu}
                         timeout={300}

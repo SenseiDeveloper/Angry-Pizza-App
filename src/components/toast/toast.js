@@ -10,21 +10,22 @@ import {clearMessage} from "../../redux/action/messageAction";
 const Toast = () => {
     const message = useSelector( state => state.message);
     const dispatch = useDispatch();
+    const TIME = 5000;
 
     const icon = message.status === 'success' ? successIcon:
         message.status === 'danger' ? dangerIcon:
             message.status === 'info' ? infoIcon : warningIcon;
 
     useEffect( () => {
-        let inteval;
+        let timer;
         if (message.message.length !== 0){
-             inteval = setInterval( () => {
+            timer = setTimeout( () => {
                 dispatch(clearMessage());
-            },5000);
+            },TIME);
         }
 
         return () => {
-            clearInterval(inteval);
+            clearTimeout(timer);
         }
     },[message]);
 

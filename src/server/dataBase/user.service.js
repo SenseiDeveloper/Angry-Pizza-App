@@ -3,12 +3,14 @@ const users = [
     {
         id: 1,
         name: 'Test',
+        coins: 0,
         phone: 380961111111 ,
         password: '123456789'
     },
     {
         id: 2,
         name: 'Igor',
+        coins: 0,
         phone: 380661111110 ,
         password: '123456789'
     }
