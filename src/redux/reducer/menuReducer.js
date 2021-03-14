@@ -17,6 +17,11 @@ export const menuReducer = ( state = stateMenu, action) => {
                 ...state,
                 horizontalMenu: !state.horizontalMenu
             };
+        case typeActions.CLOSE_VERTICAL_MOBILE_MENU:
+            return {
+                ...state,
+                horizontalMenu: false
+            };
         default: return state;
     }
 };

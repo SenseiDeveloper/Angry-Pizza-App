@@ -56,9 +56,14 @@ input:focus {
 
 .bgGrey{
   background-color: #f6f6f6;
-  min-height: calc(100vh - 85px);
+  min-height: calc(100vh - 70px);
 }
 
+@media (min-width: 640px){
+  .bgGrey{
+    min-height: calc(100vh - 80px);
+  }
+}
 .container{
   padding: 0 20px;
 }

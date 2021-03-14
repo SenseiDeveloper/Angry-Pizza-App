@@ -8,3 +8,7 @@ export const setStatusMenu = (status = true) => ({
 export const setStatusVerticalMenu = () => ({
     type: typeActions.SET_STATUS_VERTICAL_MOBILE_MENU,
 });
+
+export const closeVerticalMenu = () => ({
+    type: typeActions.CLOSE_VERTICAL_MOBILE_MENU
+});

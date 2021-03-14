@@ -1,106 +1,121 @@
 $red: rgb(226, 106, 106);
 
-.menu-enter {
-  opacity: 0;
-  transform: translate3d(-50%,0,0);
-}
-.menu-enter-active {
-  opacity: 1;
-  transform: translate3d(0,0,0);
-  transition: opacity 300ms, transform 300ms;
-}
-.menu-exit {
-  opacity: 1;
-}
-.menu-exit-active {
-  opacity: 0;
-  transform: translate3d(-50%,0,0);
-  transition: opacity 300ms, transform 300ms;
-}
-
-
 section.pizza {
   .innerSection {
     display: flex;
     flex-direction: row;
 
-    .sectionContent{
+    .sectionContent {
       width: 100%;
-      .pizzaShop{
+
+      .pizzaShop {
         margin: 10px 5px;
-        button{
+
+        button {
           float: right;
           margin: 0;
         }
       }
     }
-    @media (min-width: 1024px){
-      .sectionContent{
+
+    @media (min-width: 1024px) {
+      .sectionContent {
         width: 100%;
         max-width: 1024px;
         margin: 0 auto;
       }
     }
-    @media (min-width: 1440px){
-      .sectionContent{
+    @media (min-width: 1440px) {
+      .sectionContent {
         max-width: 1200px;
       }
     }
 
     .sectionNavigation {
-      background-color: #212939;
-      min-height: calc(100vh - 85px);
-      .wrapList{
-        position: relative;
-        .iconList {
-          margin: 0;
-          padding: 0;
-          li {
-            color: white;
-            padding:10px;
-            font-size: 21px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            width: 45px;
-            height: 45px;
-            text-align: center;
-            cursor: pointer;
-          }
-          .activeLi {
-            background-color: $red;
-          }
+      position: relative;
+
+      .activeList {
+        width: 100vw;
+        position: absolute;
       }
-        .subInfoIcon {
-          margin: 0;
-          padding: 0;
-          z-index: 2;
+
+      .inActiveList {
+        width: 60px;
+        position: relative;
+      }
+
+      .wrapList {
+        background-color: #212939;
+        height: calc(100vh - 70px);
+        overflow: hidden;
+        transition: all .5s;
+
+        ul {
           position: absolute;
           top: 0;
-          left: 44px;
-          background-color: #2a3448;
-          width: calc(100vw - 44px);
-          min-height: calc(100vh - 85px);
-          .active-nav{
-            color: $red;
+          left: 0;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+
+          .toggle {
+            cursor: pointer;
+            .icon{
+              color: white;
+              font-size: 20px;
+              background: $red;
+              text-align: right;
+              padding: 2px 10px;
+              transition: all .5s;
+            }
+            .icon:hover{
+              background: rgb(240, 52, 52);
+              transition: all .5s;
+            }
           }
+
           li {
             list-style: none;
-            padding:10px;
-            text-transform: uppercase;
-            font-family: 'RobotoCondensed-Light';
-            font-size: 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            height: 45px;
-            cursor: pointer;
-            transition: all .5s;
-          }
-          li:hover{
-            background-color: #212939;
-            transition: all .5s;
-          }
-          li a:hover,
-          li a:active{
-            color: $red;
-            transition: all .5s;
+            position: relative;
+            width: 100%;
+
+            a {
+              position: relative;
+              width: 100%;
+              transition: all .5s;
+              text-decoration: none;
+              display: flex;
+              font-size: 20px;
+              font-family: 'RobotoCondensed-Light';
+
+              .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+                font-size: 25px;
+              }
+
+              .title {
+                position: relative;
+                display: block;
+                height: 60px;
+                line-height: 60px;
+                white-space: nowrap;
+              }
+            }
+
+            a:hover {
+              background-color: #2a3448;
+              color: $red;
+              transition: all .5s;
+            }
+
+            .active-nav {
+              color: $red;
+            }
           }
         }
       }
@@ -108,47 +123,21 @@ section.pizza {
   }
 }
 @media (min-width: 640px){
-  section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
+  section.pizza .innerSection .sectionNavigation .activeList {
     width: 30vw;
   }
-}
-@media (min-width: 768px){
-  section.pizza .innerSection .sectionNavigation .wrapList .subInfoIcon{
-    width: 25vw;
+
+  section.pizza .innerSection .sectionNavigation .wrapList{
+    height: calc(100vh - 80px);
   }
 }
 @media (min-width: 1024px){
-  section.pizza .innerSection .sectionNavigation .wrapList {
-    .iconList li {
-      font-size: 25px;
-      width: 50px;
-      height: 50px;
-    }
-    .subInfoIcon {
-      left: 50px;
-      li{
-        height: 50px;
-        font-size: 17px;
-        line-height: 30px;
-      }
-    }
+  section.pizza .innerSection .sectionNavigation .activeList {
+    width: 25vw;
   }
 }
 @media (min-width: 1440px){
-  section.pizza .innerSection .sectionNavigation .wrapList {
-    .iconList li {
-      font-size: 28px;
-      width: 55px;
-      height: 55px;
-    }
-    .subInfoIcon {
-      left: 55px;
-      width: 15vw;
-      li{
-        height: 55px;
-        font-size: 18px;
-        line-height: 40px;
-      }
-    }
+  section.pizza .innerSection .sectionNavigation .activeList {
+    width: 15vw;
   }
 }

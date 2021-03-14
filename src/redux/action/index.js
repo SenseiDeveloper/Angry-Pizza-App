@@ -1,4 +1,4 @@
-import {setStatusMenu,setStatusVerticalMenu} from './menuAction';
+import {setStatusMenu,setStatusVerticalMenu,closeVerticalMenu} from './menuAction';
 
 import {
     fetchRegisterUser,
@@ -26,6 +26,7 @@ import {clearMessage,setMessage} from './messageAction';
 export default {
     setStatusMenu,
     setStatusVerticalMenu,
+    closeVerticalMenu,
     fetchRegisterUser,
     registerUserSuccess,
     registerUserError,
