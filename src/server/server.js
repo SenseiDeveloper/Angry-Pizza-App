@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const users = require('./dataBase/user.service');
 const getProducts = require('./dataBase/constructor.service');
+const pizzas = require('./dataBase/pizza.service');
 const jwt = require("jsonwebtoken");
 const accessTokenSecret = 'angrypizzaaccesstokensecret';
 
@@ -75,6 +76,11 @@ app.post('/api/create-user', cors(), function (req, res) {
 //API get products
 app.get('/api/pizza-products', cors(), (req,res) => {
     res.status(200).send(JSON.stringify(getProducts()));
+});
+
+//API GET PIZZAS
+app.get('/api/pizza-list', cors(), (req,res) => {
+    res.status(200).send(JSON.stringify(pizzas()));
 });
 
 app.listen(9000, function () {

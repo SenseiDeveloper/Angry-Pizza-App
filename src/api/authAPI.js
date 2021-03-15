@@ -27,3 +27,10 @@ export const loadProducts = () => {
         method: "GET",
     });
 };
+
+export const loadPizzas = () => {
+    return fetch(`${config.baseURL}/pizza-list`,{
+        headers,
+        method: "GET",
+    })
+};

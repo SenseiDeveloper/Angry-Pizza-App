@@ -17,11 +17,10 @@
 # notes:
 - add page not found;
 - add lezy loading;
-- add new menu;
 - correct design;
-- fix error;
 
 # page:
 - home - responsive;
 - auth page - responsive;
+- pizza page - shop - responsive;
 

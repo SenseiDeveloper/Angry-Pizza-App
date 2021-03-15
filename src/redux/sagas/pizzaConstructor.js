@@ -10,7 +10,7 @@ export function* fetchPizzaProducts(action) {
                 .then(res => res.json())
         );
         yield put(getProductsSuccess(response));
-    }catch (e) {
+    } catch (e) {
         yield put(getProductsError());
         yield put(setMessage({
             message: e.error,

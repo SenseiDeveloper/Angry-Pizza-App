@@ -8,7 +8,9 @@ import {
     loginUserSuccess,
     loginUserError,
     logoutUser
-} from './authAction'
+} from './authAction';
+
+import {fetchPizzas,getPizzaSuccess,getPizzasError} from './pizzaAction';
 
 import {
     fetchProducts,
@@ -34,6 +36,9 @@ export default {
     loginUserSuccess,
     loginUserError,
     logoutUser,
+    fetchPizzas,
+    getPizzaSuccess,
+    getPizzasError,
     fetchProducts,
     getProductsSuccess,
     getProductsError,

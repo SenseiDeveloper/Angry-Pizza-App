@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 export const ImagePizza = () => {
     const products = useSelector( state => state.pizzaConstructor.selectProducts);
-    console.log(products.products);
+
     return(
         <div className="imagePizzaConstructor">
             <div className="basis">
