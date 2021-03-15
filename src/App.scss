@@ -90,6 +90,136 @@ input:focus {
   }
 }
 
+.basket-enter {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.basket-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.basket-exit {
+  opacity: 1;
+}
+
+.basket-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modalBasket{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 999;
+  .basket{
+    background: white;
+    width: 300px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    .order{
+      display: flex;
+      justify-content: space-between;
+      button{
+        margin: 10px 0;
+      }
+    }
+    ul{
+      margin: 10px 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        img{
+          width: 50px;
+          height: 50px;
+        }
+        p{
+          font-weight: bold;
+        }
+        button{
+          font-size: 13px;
+          display: block;
+        }
+        .price{
+          color: rgb(240, 52, 52);
+          min-width: 60px;
+        }
+        .name{
+          min-width: 70px;
+          margin: 0 5px;
+        }
+      }
+    }
+    #close{
+      float: right;
+      font-size: 20px;
+    }
+    h5{
+      font-size: 16px;
+      margin: 0;
+      text-transform: uppercase;
+      display: flex;
+      svg{
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+  @media (min-width: 640px){
+    .basket{
+      width: 400px;
+      ul li{
+        position: relative;
+        button{
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px){
+    .basket{
+      width: 600px;
+      ul li{
+        position: relative;
+        .icon img{
+          width: 70px;
+          height: 70px;
+        }
+        .name{
+          min-width: 100px;
+        }
+        p{
+          font-size: 18px;
+        }
+        button{
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+  /*
+@media (min-width: 768px);
+@media (min-width: 1024px);
+@media (min-width: 1440px);
+ */
+}
+
 section{
   h3{
     margin: 0;

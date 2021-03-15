@@ -2,7 +2,8 @@ import typeActions from '../action/types';
 
 const stateMenu = {
     mobileMenu: false,
-    horizontalMenu: false
+    horizontalMenu: false,
+    modalBasket: false
 };
 
 export const menuReducer = ( state = stateMenu, action) => {
@@ -21,6 +22,11 @@ export const menuReducer = ( state = stateMenu, action) => {
             return {
                 ...state,
                 horizontalMenu: false
+            };
+        case typeActions.SET_STATUS_BASKET_MODAL:
+            return {
+                ...state,
+                modalBasket: !state.modalBasket
             };
         default: return state;
     }

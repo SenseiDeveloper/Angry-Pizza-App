@@ -12,3 +12,7 @@ export const setStatusVerticalMenu = () => ({
 export const closeVerticalMenu = () => ({
     type: typeActions.CLOSE_VERTICAL_MOBILE_MENU
 });
+
+export const setStatusBasketModal = () => ({
+    type: typeActions.SET_STATUS_BASKET_MODAL
+});

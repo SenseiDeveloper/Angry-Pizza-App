@@ -1,7 +1,22 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
+import {setStatusBasketModal} from '../../../redux/action/menuAction';
 
 export const PizzaItem = ({pizza}) => {
-    const products = [`${pizza.products.basis.name}`,...pizza.products.products.map( p => p.name)];
+    const dispatch = useDispatch();
+    const products = [`${pizza.products.basis.name}`,...pizza.products.products.map( p => p.name)]
+
+    const handleSetPizzaToLocalStorage = (itm) => {
+        dispatch(setStatusBasketModal());
+        const checkStorage = localStorage.getItem('pizzas');
+        if (!checkStorage){
+            localStorage.setItem('pizzas', JSON.stringify([itm]));
+        }else {
+            const data = JSON.parse(checkStorage);
+            localStorage.setItem('pizzas', JSON.stringify([...data,itm]));
+        }
+    };
+
     return (
         <li>
             <div className="image">
@@ -12,12 +27,16 @@ export const PizzaItem = ({pizza}) => {
                 <p>{products.join(', ')}</p>
                 <div className="price">
                     <p>{pizza.price} грн.</p>
-                    <button className="btn btn-secondary">Замовити</button>
+                    <button
+                        onClick={()=> handleSetPizzaToLocalStorage(pizza)}
+                        className="btn btn-secondary">Замовити</button>
                 </div>
             </div>
             <div className="text secondText">
                 <p>{pizza.price} грн.</p>
-                <button className="btn btn-secondary">Замовити</button>
+                <button
+                    onClick={() => handleSetPizzaToLocalStorage(pizza)}
+                    className="btn btn-secondary">Замовити</button>
             </div>
         </li>
     );
