@@ -1,11 +1,11 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {countIncrementSelectProducts, countDecrementSelectProducts} from '../../redux/action/pizzaConstructorAction';
+import {countIncrementSelectProducts, countDecrementSelectProducts} from '../../../redux/action/pizzaConstructorAction';
 
 import { FaPlus } from 'react-icons/fa';
 import { FaMinus} from 'react-icons/fa';
 import {CgClose} from 'react-icons/cg';
-import action from '../../redux/action/index';
+import action from '../../../redux/action/index';
 
 
 export const SelectProduct = ({products}) => {

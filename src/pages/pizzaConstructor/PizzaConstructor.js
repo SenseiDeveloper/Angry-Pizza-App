@@ -1,10 +1,10 @@
 import React from 'react';
 import './PizzaConstructor.scss';
 
-import {ImagePizza} from '../../components/componentPizzaConstructor/imagePizza';
-import {ProductsPizza} from '../../components/componentPizzaConstructor/productsPizza';
-import {OrderProducts} from '../../components/componentPizzaConstructor/orderProducts';
-import {SummaryPizza} from '../../components/componentPizzaConstructor/summaryPizza';
+import {ImagePizza} from './componentPizzaConstructor/imagePizza';
+import {ProductsPizza} from './componentPizzaConstructor/productsPizza';
+import {OrderProducts} from './componentPizzaConstructor/orderProducts';
+import {SummaryPizza} from './componentPizzaConstructor/summaryPizza';
 
 export const PizzaConstructor = () => {
     return (

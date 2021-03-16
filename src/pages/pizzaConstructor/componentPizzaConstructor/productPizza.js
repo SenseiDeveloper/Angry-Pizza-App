@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import action from '../../redux/action/index';
+import action from '../../../redux/action/index';
 
 export const ProductPizza = ({product}) => {
     const dispatch = useDispatch();
