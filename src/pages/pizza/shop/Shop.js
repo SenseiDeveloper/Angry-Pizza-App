@@ -5,9 +5,11 @@ import {ButtonConstructor} from '../../../components/buttons/buttonConstructor';
 import {PizzaItem} from './pizzaItem';
 import {Loader} from "../../../components/loader/loader";
 import {Pagination} from '../../../components/pagination';
+import {SearchPizzaInput} from '../../../components/searchPizzaInput';
 
 export const Shop = () => {
     const [pizzaState, setPizzaState] = useState([]);
+    const [searchMess, setSearchMess] = useState('');
     const pizzaArray = useSelector(state => state.pizza);
 
     const initItem = () => {
@@ -23,27 +25,52 @@ export const Shop = () => {
         setPizzaState(items);
     };
 
+    const handleSearchField = (item) => {
+       // setPizzaState(item);
+        if (typeof item === "string"){
+            setSearchMess(item);
+        }else if(item === 0) {
+            setSearchMess('');
+            setPizzaState(initItem());
+        }else {
+            setSearchMess('');
+            setPizzaState(item);
+        }
+    };
+
     useEffect(() => {
         setPizzaState(initItem());
     },[pizzaArray.pizzas]);
 
     return (
         <div className="pizzaShop">
-            <ButtonConstructor/>
-            <input type="text" placeholder='Знайти піцу'/>
+            <ButtonConstructor />
+            <SearchPizzaInput
+                pizzaArray={pizzaArray.pizzas}
+                handleSearchField={handleSearchField}
+            />
             {
                 pizzaArray && pizzaArray.loading ?
                     <>
-                        <ul>
-                            {
-                                 pizzaState.map(pizza =>
-                                    <PizzaItem key={pizza.id} pizza={pizza}/>
-                                )
-                            }
-                        </ul>
-                        <Pagination
-                            pizzas = {pizzaArray.pizzas}
-                            handleChangeItem={handleChangeItem}/>
+                        {
+                            searchMess && searchMess.length !== 0 ?
+                                <p>{searchMess}</p>
+                                :
+                                <ul>
+                                    {
+                                        pizzaState.map(pizza =>
+                                            <PizzaItem key={pizza.id} pizza={pizza}/>
+                                        )
+                                    }
+                                </ul>
+                        }
+                        {
+                            searchMess && searchMess.length !== 0 ?
+                                null: pizzaState.length < 5 ?
+                                null: <Pagination
+                                    pizzas = {pizzaArray.pizzas}
+                                    handleChangeItem={handleChangeItem}/>
+                        }
                     </>
                     : <Loader/>
             }
