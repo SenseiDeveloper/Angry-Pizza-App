@@ -1,6 +1,8 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
+
 import {setStatusBasketModal} from '../../../redux/action/menuAction';
+import {setPizzaToLocalStorage} from '../../../helpers/pizza';
 
 export const PizzaItem = ({pizza}) => {
     const dispatch = useDispatch();
@@ -8,13 +10,7 @@ export const PizzaItem = ({pizza}) => {
 
     const handleSetPizzaToLocalStorage = (itm) => {
         dispatch(setStatusBasketModal());
-        const checkStorage = localStorage.getItem('pizzas');
-        if (!checkStorage){
-            localStorage.setItem('pizzas', JSON.stringify([itm]));
-        }else {
-            const data = JSON.parse(checkStorage);
-            localStorage.setItem('pizzas', JSON.stringify([...data,itm]));
-        }
+        setPizzaToLocalStorage(itm);
     };
 
     return (

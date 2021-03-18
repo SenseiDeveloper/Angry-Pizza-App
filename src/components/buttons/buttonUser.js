@@ -10,7 +10,7 @@ import {useSelector} from "react-redux";
 
 export const ButtonUser = () => {
     const [showModal, setShowModal] = useState(false);
-    const stateAuth = useSelector(state => state.auth.isAuthenticated);
+    const stateAuth = useSelector(state => state.auth.token);
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     let authStatus = !token && !user;

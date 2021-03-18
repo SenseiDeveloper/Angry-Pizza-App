@@ -26,7 +26,6 @@ export const Shop = () => {
     };
 
     const handleSearchField = (item) => {
-       // setPizzaState(item);
         if (typeof item === "string"){
             setSearchMess(item);
         }else if(item === 0) {

@@ -20,7 +20,7 @@ export const ProductPizza = ({product}) => {
         <ul>
             {
                 product && product.map( prod =>
-                    <li className={prod.select ? 'active': ''} key={prod.id} onClick={() => handleProduct(prod)}>
+                    <li className={prod.select ? 'activeProduct': ''} key={prod.id} onClick={() => handleProduct(prod)}>
                         <div className="icon">
                             <img src={process.env.PUBLIC_URL + prod.icon} alt={prod.name}/>
                         </div>

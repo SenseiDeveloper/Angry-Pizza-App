@@ -23,4 +23,5 @@
 - home - responsive;
 - auth page - responsive;
 - pizza page - shop - responsive;
+- pizza constructor page - responsive;
 

@@ -20,9 +20,9 @@ export const ModalBasket = () => {
     };
 
     const mathPrice = () =>{
-        const price = basketState.map( e => e.price);
-        const setPrice = price.reduce((one,two) => { return one + two},0);
-        return setPrice;
+            const price = basketState.map( e => e.price);
+            const setPrice = price.reduce((one,two) => { return one + two},0);
+            return setPrice;
     };
 
     useEffect(() => {
@@ -36,7 +36,7 @@ export const ModalBasket = () => {
                 <h5 className="title"><BiShoppingBag/> Корзина</h5>
                 {
                     !pizzaStorage ? <p>Ви не додали продуктів в корзину</p> :
-                        pizzaStorage.length === 2 ?
+                        pizzaStorage.length === 2 || pizzaStorage.length === 0  ?
                         <p>Ви не додали продуктів в корзину</p> :
                         <>
                             <BasketItem  handleRemovePizza={handleRemovePizza} itm={basketState}/>

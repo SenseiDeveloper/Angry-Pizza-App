@@ -1,174 +1,260 @@
-section.pizzaConstructor{
-  padding:10px;
-  .productTitle{
+section.pizzaConstructor {
+  padding: 10px;
+
+  .productTitle {
     margin: 0;
   }
-  .imagePizzaConstructor{
+
+  .imagePizzaConstructor {
     width: 100%;
     position: relative;
-    .basis{
+    .basis {
       width: 100%;
       z-index: 1;
     }
-    .products img{
-      width: 90%;
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 15px;
-      margin-left: 5%;
+
+    .products {
+      #king-cheese{
+        z-index: 2;
+      }
+      #mocarella{
+        z-index: 3;
+      }
+
+      img {
+        width: 90%;
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        bottom: 15px;
+        margin-left: 5%;
+        animation: fadeInProducts .5s ease-out;
+      }
     }
   }
-  @media (min-width: 1024px){
-    .imagePizzaConstructor{
+
+  @media (min-width: 1024px) {
+    .imagePizzaConstructor {
       width: 50%;
     }
   }
-  .summaryPizza{
+
+  .summaryPizza {
     margin: 10px 0;
-    h5{
+
+    h5 {
       font-size: 16px;
       padding: 0;
       margin: 0;
     }
-    button{
+
+    button {
       display: block;
       width: 100%;
     }
   }
-  @media (min-width: 768px){
-    .summaryPizza{
+
+  @media (min-width: 768px) {
+    .summaryPizza {
       width: 45%;
     }
   }
-  .orderProducts{
-    ul{
+
+  .orderProducts {
+    ul {
       margin: 0;
       padding: 0;
-      li{
+
+      li {
         list-style: none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: rgba(44, 62, 80,1);
+        background-color: rgba(44, 62, 80, 1);
         border-radius: 3px;
         color: white;
         padding: 0 10px;
         margin: 5px 0;
-        button{
+
+        .counterProduct {
+          display: flex;
+          align-items: center;
+        }
+
+        .nameProduct {
+          width: 150px;
+        }
+
+        button {
           color: rgb(246, 71, 71);
           font-size: 15px;
         }
-        .right{
-          display: flex;
 
-          button{
+        .right {
+          display: flex;
+          align-items: center;
+
+          button {
+            padding-top: 5px;
             font-size: 20px;
           }
         }
       }
     }
   }
-  @media (min-width: 768px){
-    .orderProducts{
-      width: 50%;
+
+  @media (min-width: 640px) {
+    .orderProducts ul li .nameProduct {
+      width: 220px;
     }
   }
-  .productsPizza{
+  @media (min-width: 768px) {
+    .orderProducts {
+      width: 50%;
+
+      ul li .nameProduct {
+        width: 150px;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .orderProducts ul li .nameProduct {
+      width: 240px;
+    }
+  }
+
+  .productsPizza {
     margin: 10px 0;
-    .accordion{
-      .item{
-        box-shadow:0 0 10px 4px rgba(0,0,0,0.1);
+
+    .accordion {
+      .item {
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
         padding: 10px;
         margin: 8px 0;
-        .active{
+
+        .active {
           padding-bottom: 5px;
-          border-bottom: 1px solid rgba(0,0,0,0.1);
-          color:rgb(246, 71, 71);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          color: rgb(246, 71, 71);
         }
-        .title{
+
+        .title {
           cursor: pointer;
-          p{
+
+          p {
             margin: 0;
             padding: 0;
             font-size: 18px;
             text-transform: uppercase;
-            svg{
+
+            svg {
               color: rgb(246, 71, 71);
             }
           }
         }
-        .text{
+
+        .text {
           padding: 5px 0 0 0;
-          animation: fadeInUp .5s ease-out;
-        }
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      }
-    }
-    ul{
-      margin: 0;
-      padding: 0;
-      li{
-        cursor: pointer;
-        list-style: none;
-        display: inline-block;
-        background: rgba(27,33,45,1);
-        background: radial-gradient(circle, rgba(142,29,29,1) 0%, rgba(27,33,45,1) 100%);
-        color: white;
-        margin: 5px;
-        border-radius: 3px;
-        p{
-          margin: 0;
-          padding: 5px;
-          background-color: rgba(44, 62, 80,.8);
-          border-bottom-left-radius: 3px;
-          border-bottom-right-radius: 3px;
-          text-align: center;
-        }
-          .icon{
-            padding: 10px;
-            img{
-              width: 70px;
-              height: 35px;
-              display: block;
-              margin: 0 auto;
+          animation: fadeInProducts .5s ease-out;
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              cursor: pointer;
+              list-style: none;
+              display: inline-block;
+              background: rgba(27, 33, 45, 1);
+              background: radial-gradient(circle, rgba(142, 29, 29, 1) 0%, rgba(27, 33, 45, 1) 100%);
+              color: white;
+              margin: 1px;
+              border-radius: 3px;
+              width: 49%;
+
+              p {
+                padding: 5px 0;
+                margin: 0;
+                background-color: rgba(44, 62, 80, .8);
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                text-align: center;
+                font-size: 15px;
+              }
+
+              .icon {
+                padding: 7px;
+
+                img {
+                  width: 70px;
+                  height: 35px;
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+            }
+
+            .activeProduct p {
+              background-color: rgba(44, 62, 80, 0);
+            }
+
+            li:hover p {
+              background-color: rgba(44, 62, 80, 0);
             }
           }
-      }
-      .active p{
-        background-color: rgba(44, 62, 80,0);
-      }
-      li:hover p{
-        background-color: rgba(44, 62, 80,0);
+        }
+
+        @media (min-width: 640px) {
+          .text {
+            ul li {
+              width: auto;
+              margin: 3px;
+
+              p {
+                font-size: 16px;
+                padding: 5px;
+              }
+            }
+          }
+        }
+        @media (min-width: 1024px) {
+          .text {
+            ul li{
+            .icon img {
+              width: 90px;
+            }
+              p{
+                font-size: 17px;
+                padding: 7px;
+              }
+            }
+          }
+        }
       }
     }
   }
-  @media (min-width: 1024px){
-    .productsPizza{
+
+  @media (min-width: 1024px) {
+    .productsPizza {
       width: 45%;
     }
   }
 }
-@media (min-width: 768px){
-  section.pizzaConstructor{
-    .innerBlockSecond{
+
+@media (min-width: 768px) {
+  section.pizzaConstructor {
+    .innerBlockSecond {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
   }
 }
-@media (min-width: 1024px){
-  section.pizzaConstructor{
-    .innerBlockFirst{
+
+@media (min-width: 1024px) {
+  section.pizzaConstructor {
+    .innerBlockFirst {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -176,6 +262,14 @@ section.pizzaConstructor{
     }
   }
 }
-/*
-@media (min-width: 1024px);
-@media (min-width: 1440px);*/
+
+@keyframes fadeInProducts {
+  from {
+    transform: scale(.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

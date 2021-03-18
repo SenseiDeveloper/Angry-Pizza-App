@@ -16,7 +16,7 @@ export const Auth = () => {
                 <div className="container">
                     <Switch>
                         {
-                            authRoutes.map(route => <Route path={route.path} component={components[route.component]} />)
+                            authRoutes.map(route => <Route key={route.path} path={route.path} component={components[route.component]} />)
                         }
                         <Redirect exect from="/auth" to="/auth/login" />
                     </Switch>

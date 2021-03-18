@@ -37,3 +37,8 @@ export const countDecrementSelectProducts = payload => ({
     type: typeActions.PIZZA_CONSTRUCTOR_DECREMENT_SELECT_PRODUCT,
     payload
 });
+
+export const savePizza = payload => ({
+    type: typeActions.PIZZA_CONSTRUCTOR_SAVE_PIZZA,
+    payload
+});

@@ -17,7 +17,7 @@ export const Pizza = () => {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     let authStatus = !token && !user;
-    const stateAuth = useSelector(state => state.auth.isAuthenticated);
+    const stateAuth = useSelector(state => state.auth.token);
 
     useEffect(() => {
         dispatch(fetchPizzas());

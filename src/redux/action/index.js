@@ -25,7 +25,8 @@ import {
     setSelectProduct,
     countIncrementSelectProducts,
     countDecrementSelectProducts,
-    removeSelectProduct
+    removeSelectProduct,
+    savePizza
 } from './pizzaConstructorAction';
 
 import {clearMessage,setMessage} from './messageAction';
@@ -53,6 +54,7 @@ export default {
     countIncrementSelectProducts,
     countDecrementSelectProducts,
     removeSelectProduct,
+    savePizza,
     setMessage,
     clearMessage
 }

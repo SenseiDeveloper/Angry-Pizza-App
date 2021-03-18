@@ -5,12 +5,15 @@ const cors = require('cors');
 const users = require('./dataBase/user.service');
 const getProducts = require('./dataBase/constructor.service');
 const pizzas = require('./dataBase/pizza.service');
+const usersPizza = require('./dataBase/usersPizza.service');
+const auth = require('./auth');
 const jwt = require("jsonwebtoken");
 const accessTokenSecret = 'angrypizzaaccesstokensecret';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
+
 
 //API LOGIN USER
 app.post('/api/login', cors(), function (req,res) {
@@ -72,7 +75,25 @@ app.post('/api/create-user', cors(), function (req, res) {
         isRegistered: false
     });
 });
+//API SAVE PIZZA
+app.post('/api/save-pizza',cors(),auth,(req,res) => {
+    const userID = req.body.userID;
+    const name = req.body.pizza.name;
+    const image = req.body.pizza.image;
+    const price = req.body.pizza.price;
+    const products = req.body.pizza.products;
 
+    const userPizza = {
+        id: new Date(),
+        userID,
+        name,
+        image,
+        price,
+        products
+    };
+    usersPizza().push(userPizza);
+    res.status(200).send(userPizza);
+});
 //API get products
 app.get('/api/pizza-products', cors(), (req,res) => {
     res.status(200).send(JSON.stringify(getProducts()));

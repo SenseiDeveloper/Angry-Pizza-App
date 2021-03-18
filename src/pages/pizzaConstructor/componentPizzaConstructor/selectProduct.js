@@ -33,8 +33,8 @@ export const SelectProduct = ({products}) => {
                 {
                     products.map( p =>
                         <li key={p.id}>
-                            <p>{p.name} ({p.weight * p.count}грам)</p>
-                            <p>
+                            <p className="nameProduct">{p.name} ({p.weight * p.count}грам)</p>
+                            <p className="counterProduct">
                                 <button onClick={() => handleCountDecrementProduct(p)}><FaMinus /></button>
                                             {p.count}
                                 <button onClick={() => handleCountIncrementProduct(p)}><FaPlus /></button>
