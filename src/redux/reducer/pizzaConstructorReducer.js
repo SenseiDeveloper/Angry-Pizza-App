@@ -38,6 +38,14 @@ export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) 
                     loading: false
                 }
             };
+        case typeActions.PIZZA_CONSTRUCTOR_CLEAR_SELECT:
+            return {
+                ...state,
+                selectProducts: {
+                    basis: {},
+                    products: []
+                }
+            };
         case typeActions.PIZZA_CONSTRUCTOR_SELECT_BASIS:
             return {
                 products: {

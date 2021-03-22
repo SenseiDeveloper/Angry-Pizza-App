@@ -104,6 +104,16 @@ app.get('/api/pizza-list', cors(), (req,res) => {
     res.status(200).send(JSON.stringify(pizzas()));
 });
 
+//API GET USERS PIZZA
+app.get('/api/pizza-list-user/:id',cors(),auth,(req,res) => {
+    const pizzas = usersPizza().filter( p => {
+        if(p.userID === Number(req.params.id)){
+            return p;
+        }
+    });
+    res.status(200).send(pizzas);
+});
+
 app.listen(9000, function () {
     console.log('Api server started');
 });

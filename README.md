@@ -3,8 +3,11 @@
  - `cd server`
  - `node server`
 
-# Development:
+# Test user:
+- phone: 380961111111 
+- password: '123456789'
 
+# Development:
 - use scss;
 - use first mobile development;
 - use React Icons;
@@ -24,4 +27,5 @@
 - auth page - responsive;
 - pizza page - shop - responsive;
 - pizza constructor page - responsive;
+- pizza page - my pizza- responsive;
 

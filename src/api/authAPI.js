@@ -50,3 +50,10 @@ export const savePizzaConstructor = (data,token) => {
         body: JSON.stringify(data)
     })
 };
+
+export const loadPizzaUser = (token,id) => {
+    return fetch(`${config.baseURL}/pizza-list-user/${id}`,{
+        headers: authHeaders(token),
+        method: "GET",
+    })
+};

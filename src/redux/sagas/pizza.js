@@ -1,6 +1,6 @@
 import {call, put} from "@redux-saga/core/effects";
-import {loadPizzas} from '../../api/authAPI';
-import {getPizzaSuccess,getPizzasError} from '../action/pizzaAction';
+import {loadPizzas,loadPizzaUser} from '../../api/authAPI';
+import {fetchPizzaSuccess,fetchPizzasError,fetchUserPizzasSuccess,fetchUserPizzasError} from '../action/pizzaAction';
 import {setMessage} from "../action/messageAction";
 
 export function* fetchPizza() {
@@ -9,9 +9,26 @@ export function* fetchPizza() {
             loadPizzas()
                 .then(res => res.json())
         );
-        yield put(getPizzaSuccess(response));
+        yield put(fetchPizzaSuccess(response));
     } catch (e) {
-        yield put(getPizzasError());
+        yield put(fetchPizzasError());
+        yield put(setMessage({
+            message: e.error,
+            status: 'danger'
+        }));
+    }
+}
+
+export function* fetchUserPizza(action) {
+    const token = localStorage.getItem('token');
+    try{
+        const response = yield call(() =>
+            loadPizzaUser(token,action.payload)
+                .then(res => res.json())
+        );
+        yield put(fetchUserPizzasSuccess(response))
+    }catch (e) {
+        yield put(fetchUserPizzasError());
         yield put(setMessage({
             message: e.error,
             status: 'danger'

@@ -80,7 +80,7 @@ export const SummaryPizza = () => {
              basisPrice = products.basis.price;
         }
         if(products.products.length !== 0){
-            const productsPrice = products.products.map( p => p.price);
+            const productsPrice = products.products.map( p => p.price * p.count);
             priceArray = [...productsPrice];
         }
 

@@ -13,6 +13,10 @@ export const getProductsError = () => ({
     type: typeActions.PIZZA_CONSTRUCTOR_PRODUCTS_ERROR,
 });
 
+export const clearSelectProducts = () => ({
+    type: typeActions.PIZZA_CONSTRUCTOR_CLEAR_SELECT
+});
+
 export const setSelectBasis = payload => ({
     type: typeActions.PIZZA_CONSTRUCTOR_SELECT_BASIS,
     payload

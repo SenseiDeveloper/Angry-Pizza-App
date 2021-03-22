@@ -5,7 +5,8 @@ import {
     watchLoginUser,
     watchPizzaProducts,
     watchPizza,
-    watchSavePizza
+    watchSavePizza,
+    watchPizzaUser
 } from "./watchers";
 
 export default function* root() {
@@ -14,6 +15,7 @@ export default function* root() {
         watchLoginUser(),
         watchPizza(),
         watchPizzaProducts(),
-        watchSavePizza()
+        watchSavePizza(),
+        watchPizzaUser()
     ]);
 }

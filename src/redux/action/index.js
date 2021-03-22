@@ -15,7 +15,14 @@ import {
     logoutUser
 } from './authAction';
 
-import {fetchPizzas,getPizzaSuccess,getPizzasError} from './pizzaAction';
+import {
+    fetchPizzas,
+    fetchPizzaSuccess,
+    fetchPizzasError,
+    fetchUserPizzas,
+    fetchUserPizzasSuccess,
+    fetchUserPizzasError
+} from './pizzaAction';
 
 import {
     fetchProducts,
@@ -26,7 +33,8 @@ import {
     countIncrementSelectProducts,
     countDecrementSelectProducts,
     removeSelectProduct,
-    savePizza
+    savePizza,
+    clearSelectProducts
 } from './pizzaConstructorAction';
 
 import {clearMessage,setMessage} from './messageAction';
@@ -44,8 +52,11 @@ export default {
     loginUserError,
     logoutUser,
     fetchPizzas,
-    getPizzaSuccess,
-    getPizzasError,
+    fetchUserPizzas,
+    fetchUserPizzasSuccess,
+    fetchUserPizzasError,
+    fetchPizzaSuccess,
+    fetchPizzasError,
     fetchProducts,
     getProductsSuccess,
     getProductsError,
@@ -54,6 +65,7 @@ export default {
     countIncrementSelectProducts,
     countDecrementSelectProducts,
     removeSelectProduct,
+    clearSelectProducts,
     savePizza,
     setMessage,
     clearMessage
