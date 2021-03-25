@@ -18,3 +18,9 @@ export const pizzaValidation = products => {
         return false;
     }
 };
+
+export const mathPrice = state =>{
+    const price = state.map( e => e.price);
+    const setPrice = price.reduce((one,two) => { return one + two},0);
+    return setPrice;
+};

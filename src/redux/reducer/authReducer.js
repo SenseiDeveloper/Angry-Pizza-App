@@ -45,6 +45,18 @@ export const authReducer = (state = stateAuth, action) => {
                 isAuthenticated: false,
                 user: null
         };
+        case typeActions.USER_SAVE_ADDRESS:
+            return {
+                ...state,
+                isAuthenticated: true,
+                user: action.payload
+            };
+        case typeActions.USER_LOAD_DATA_SUCCESS:
+            return {
+                ...state,
+                isAuthenticated: true,
+                user: action.payload
+            };
         default:
             return state;
     }

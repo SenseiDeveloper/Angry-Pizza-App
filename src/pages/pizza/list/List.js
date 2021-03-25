@@ -12,7 +12,7 @@ export const List = () => {
 
     useEffect(()=> {
         const user = JSON.parse(localStorage.getItem('user')).id;
-        dispatch(fetchUserPizzas(user))
+        dispatch(fetchUserPizzas(user));
     },[]);
 
     return (
@@ -23,10 +23,10 @@ export const List = () => {
                 userPizzas && userPizzas.loadingUserPizza ?
                     <>
                         {
-                            userPizzas.pizzasUser.length !== 0 ?
+                            userPizzas && userPizzas.pizzasUser.length !== 0 ?
                                 <ul id="myPizza">
                                     {
-                                        userPizzas.pizzasUser.map( pizza =>
+                                         userPizzas.pizzasUser.map( pizza =>
                                             <PizzaItem key={pizza.id} pizza={pizza}/>
                                         )
                                     }

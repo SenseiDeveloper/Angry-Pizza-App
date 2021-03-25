@@ -6,6 +6,13 @@ import {
 } from './menuAction';
 
 import {
+    fetchSaveUserAddress,
+    saveUserAddress,
+    loadUserData,
+    setUserData
+} from './userAction';
+
+import {
     fetchRegisterUser,
     registerUserSuccess,
     registerUserError,
@@ -68,5 +75,9 @@ export default {
     clearSelectProducts,
     savePizza,
     setMessage,
-    clearMessage
+    clearMessage,
+    saveUserAddress,
+    fetchSaveUserAddress,
+    loadUserData,
+    setUserData
 }

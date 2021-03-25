@@ -1,7 +1,15 @@
 import { put, call } from "redux-saga/effects";
 import {setMessage} from '../action/messageAction';
-import {registerUserSuccess,registerUserError, loginUserSuccess, loginUserError} from  '../action/authAction';
-import {registerUser,loginUser} from '../../api/authAPI';
+import {
+    registerUserSuccess,
+    registerUserError,
+    loginUserSuccess,
+    loginUserError
+} from  '../action/authAction';
+
+import {saveUserAddress,setUserData} from '../action/userAction';
+import {registerUser, loginUser} from '../../api/authAPI';
+import {saveAddress, getUserData} from '../../api/privateAPI';
 
 export function* fetchRegistrationUser(action) {
     try{
@@ -47,6 +55,43 @@ export function* fetchLoginUser(action) {
             }))
         }
     } catch (e) {
+        yield put(setMessage({
+            message: e.error,
+            status: 'danger'
+        }));
+    }
+}
+
+export function* fetchSaveAddress(action) {
+    const token = localStorage.getItem('token');
+    try{
+        const response = yield call(() =>
+            saveAddress(action.payload,token)
+                .then(res => res.json())
+        );
+        localStorage.setItem('user', JSON.stringify(response));
+        yield put(saveUserAddress(response));
+        yield put(setMessage({
+            message: 'Ви зберегли адрессу',
+            status: 'success'
+        }));
+    }catch (e) {
+        yield put(setMessage({
+            message: e.error,
+            status: 'danger'
+        }));
+    }
+}
+
+export function* fetchUserData(action) {
+    const token = localStorage.getItem('token');
+    try{
+        const response = yield call(() =>
+            getUserData(token,action.payload)
+                .then(res => res.json())
+        );
+        yield put(setUserData(response));
+    }catch (e) {
         yield put(setMessage({
             message: e.error,
             status: 'danger'

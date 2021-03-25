@@ -5,7 +5,11 @@ const users = [
         name: 'Name',
         coins: 0,
         phone: 380961111111 ,
-        password: '123456789'
+        password: '123456789',
+        address: {
+            street: 'Коновальця',
+            address: '11б, кв. 3'
+        }
     },
     {
         id: 2,

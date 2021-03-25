@@ -7,7 +7,7 @@ import {Logo} from '../../components/logo';
 import {ButtonOpenMobileMenu} from '../../components/buttons/buttonOpenMobileMenu';
 import {ButtonBasket} from '../../components/buttons/buttonBasket';
 import {Navigation} from '../../components/nav';
-import {ModalMenu} from '../../components/modalMenu';
+import {ModalMenu} from '../../components/modal/modalMenu';
 import {ButtonUser} from '../../components/buttons/buttonUser';
 
 export const Header = () => {

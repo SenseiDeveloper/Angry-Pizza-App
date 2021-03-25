@@ -1,0 +1,104 @@
+section.order{
+  padding: 20px 0;
+  .delivery{
+    margin: 10px 0;
+    padding: 5px 5px 35px 5px;
+    background-color: white;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    .btn-save{
+      border-radius: 0;
+      border-bottom: 1px solid rgb(246, 71, 71);
+      display: block;
+      float: right;
+    }
+    .select-wrapper {
+      width: 100%;
+      position: relative;
+      height: 38px;
+      color: #444;
+      background: transparent;
+      border: 1px solid gainsboro;
+      border-radius: 0;
+    }
+
+    .select-wrapper > select {
+      width: 100%;
+      height: 37px;
+      background: transparent;
+      border: 0;
+      appearance: none;
+      z-index: 1;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    .select-wrapper > select::-ms-expand{
+      display: none;
+    }
+
+    .select-arrow {
+      position: absolute;
+      z-index: -1;
+      border: 8px solid transparent;
+      border-bottom: 0;
+      right: 11px;
+    }
+    .select-arrow:nth-child(2) {
+      top: 15px;
+      border-top-color: #bdbdbd;
+    }
+    .select-arrow:nth-child(3) {
+      top: 13px;
+      border-top-color: #FFF;
+    }
+  }
+  .money{
+    padding: 5px;
+    background-color: white;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    p{
+      margin: 0;
+      padding: 0;
+      span{
+        color: rgb(246, 71, 71);
+      }
+    }
+  }
+  .pizza{
+    ul{
+      margin: 10px 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        margin: 5px 0;
+        padding: 0;
+        img{
+          width: 50px;
+          height: 50px;
+          display: flex;
+        }
+        p{
+          font-weight: bold;
+        }
+        button{
+          font-size: 13px;
+          display: block;
+          padding: 5px;
+          margin: 0 5px;
+        }
+        .price{
+          color: rgb(240, 52, 52);
+          min-width: 60px;
+        }
+        .name{
+          min-width: 70px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}

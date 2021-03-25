@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
+import {useDispatch} from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import {BiShoppingBag} from 'react-icons/bi';
 import {CgClose} from 'react-icons/cg';
-import {setStatusBasketModal} from "../redux/action/menuAction";
-import {useDispatch} from "react-redux";
-import {BasketItem} from '../components/basketItem';
+import {setStatusBasketModal} from "../../redux/action/menuAction";
+import {BasketItem} from '../basketItem';
+import {mathPrice} from '../../helpers/pizza';
 
 export const ModalBasket = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const pizzaStorage = localStorage.getItem('pizzas');
     const [basketState, setBasketState] = useState([]);
@@ -19,16 +22,16 @@ export const ModalBasket = () => {
         setBasketState(pizzaArray);
     };
 
-    const mathPrice = () =>{
-            const price = basketState.map( e => e.price);
-            const setPrice = price.reduce((one,two) => { return one + two},0);
-            return setPrice;
+    const openOrderPage = () => {
+        history.push('/order');
+        dispatch(setStatusBasketModal());
     };
 
     useEffect(() => {
         setBasketState(JSON.parse(pizzaStorage));
-        mathPrice();
+        mathPrice(basketState);
     }, []);
+
     return (
         <div className="modalBasket">
             <div className="basket">
@@ -41,8 +44,8 @@ export const ModalBasket = () => {
                         <>
                             <BasketItem  handleRemovePizza={handleRemovePizza} itm={basketState}/>
                             <div className="order">
-                                <p>Сумма: {mathPrice()}</p>
-                                <button className="btn btn-secondary">Оплатити</button>
+                                <p>Сумма: {mathPrice(basketState)}</p>
+                                <button className="btn btn-secondary" onClick={() => openOrderPage()}>Оплатити</button>
                             </div>
                         </>
 

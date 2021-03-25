@@ -114,6 +114,19 @@ app.get('/api/pizza-list-user/:id',cors(),auth,(req,res) => {
     res.status(200).send(pizzas);
 });
 
+//API SAVE USER ADDRESS
+app.post('/api/save-user-address', cors() , auth , (req,res) => {
+    const user = users().find(u => u.id === req.body.userID);
+    user.address = req.body.values;
+    res.status(200).send(user);
+});
+
+//API GET USER
+app.get('/api/user/:id',cors() , auth, (req,res) => {
+    const user = users().find(u => u.id === Number(req.params.id));
+    res.status(200).send(user);
+});
+
 app.listen(9000, function () {
     console.log('Api server started');
 });

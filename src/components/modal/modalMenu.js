@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {setStatusMenu} from '../redux/action/menuAction';
+import {setStatusMenu} from '../../redux/action/menuAction';
 
-import {Navigation} from "./nav";
+import {Navigation} from "../nav";
 import {CgClose} from 'react-icons/cg';
 
 

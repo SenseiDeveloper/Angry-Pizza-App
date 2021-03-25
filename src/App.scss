@@ -54,6 +54,49 @@ input:focus {
   border:1px solid dodgerblue;
 }
 
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top:0;
+  left: 0;
+  background: rgba(0,0,0,.9);
+  padding: 20px;
+  .innerModal{
+    padding: 10px;
+    background: white;
+    width: 300px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    h4{
+      text-transform: uppercase;
+    }
+    #close{
+      float: right;
+      background: none;
+      color: red;
+      font-size: 20px;
+    }
+    button{
+      background: rgb(34, 167, 240);
+      color: white;
+      display: block;
+      margin: 0 auto;
+      padding: 7px 14px;
+      transition: all .4s;
+    }
+    .button:hover,
+    .button:active{
+      background-color: rgb(25, 181, 254);
+      transition: all .4s;
+    }
+  }
+}
+
 .bgGrey{
   background-color: #f6f6f6;
   min-height: calc(100vh - 70px);

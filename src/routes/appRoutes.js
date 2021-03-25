@@ -23,6 +23,10 @@ export const appRoutes = [
     ,{
         path: '/pizza-constructor',
         component: 'PizzaConstructor'
+    },
+    {
+        path: '/order',
+        component: 'Order'
     }
 ];
 

@@ -1,5 +1,6 @@
 import {call, put} from "@redux-saga/core/effects";
-import {loadProducts,savePizzaConstructor} from '../../api/authAPI';
+import {loadProducts} from '../../api/publicAPI';
+import {savePizzaConstructor} from '../../api/privateAPI';
 import {getProductsSuccess,getProductsError} from '../action/pizzaConstructorAction';
 import {setMessage} from "../action/messageAction";
 

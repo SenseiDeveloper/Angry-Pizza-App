@@ -5,7 +5,7 @@
 
 # Test user:
 - phone: 380961111111 
-- password: '123456789'
+- password: 123456789
 
 # Development:
 - use scss;
@@ -28,4 +28,5 @@
 - pizza page - shop - responsive;
 - pizza constructor page - responsive;
 - pizza page - my pizza- responsive;
+- pizza page - profile - responsive;
 

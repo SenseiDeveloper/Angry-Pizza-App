@@ -11,11 +11,11 @@ import {Info} from "../../pages/info/Info";
 import {Promotions} from "../../pages/promotions/Promotions";
 import {Auth} from "../../pages/auth/Auth";
 import {PizzaConstructor} from "../../pages/pizzaConstructor/PizzaConstructor";
-import {ModalBasket} from '../../components/modalBasket';
-
+import {ModalBasket} from '../../components/modal/modalBasket';
+import {Order} from "../order/Order";
 
 const components = {
-    Home,Pizza,Info,Promotions,Auth,PizzaConstructor
+    Home,Pizza,Info,Promotions,Auth,PizzaConstructor,Order
 };
 
 export const Main = () => {
