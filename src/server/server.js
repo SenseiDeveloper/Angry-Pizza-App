@@ -6,6 +6,7 @@ const users = require('./dataBase/user.service');
 const getProducts = require('./dataBase/constructor.service');
 const pizzas = require('./dataBase/pizza.service');
 const usersPizza = require('./dataBase/usersPizza.service');
+const history = require('./dataBase/user-history.service');
 const auth = require('./auth');
 const jwt = require("jsonwebtoken");
 const accessTokenSecret = 'angrypizzaaccesstokensecret';
@@ -37,7 +38,8 @@ app.post('/api/login', cors(), function (req,res) {
                     id: findUser.id,
                     name: findUser.name,
                     coins: findUser.coins,
-                    phone: findUser.phone
+                    phone: findUser.phone,
+                    address: findUser.address
                 },
                 isAuthenticated: true
             });
@@ -125,6 +127,18 @@ app.post('/api/save-user-address', cors() , auth , (req,res) => {
 app.get('/api/user/:id',cors() , auth, (req,res) => {
     const user = users().find(u => u.id === Number(req.params.id));
     res.status(200).send(user);
+});
+
+//API GET USER HISTORY
+app.get('/api/user-history/:id', auth, cors(), (req,res)=> {
+    const userHistory = history().find(u => u.userID === Number(req.params.id));
+    res.status(200).send(userHistory);
+});
+
+//API BUY PIZZA
+app.post('/api/user-history', auth, cors(), (req,res)=>{
+    console.log(req.body);
+    //history
 });
 
 app.listen(9000, function () {

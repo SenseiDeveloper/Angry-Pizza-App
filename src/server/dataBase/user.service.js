@@ -3,7 +3,7 @@ const users = [
     {
         id: 1,
         name: 'Name',
-        coins: 0,
+        coins: 98.7,
         phone: 380961111111 ,
         password: '123456789',
         address: {

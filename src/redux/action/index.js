@@ -9,7 +9,10 @@ import {
     fetchSaveUserAddress,
     saveUserAddress,
     loadUserData,
-    setUserData
+    setUserData,
+    loadUserHistory,
+    setUserHistory,
+    errorUserHistory
 } from './userAction';
 
 import {
@@ -79,5 +82,8 @@ export default {
     saveUserAddress,
     fetchSaveUserAddress,
     loadUserData,
-    setUserData
+    setUserData,
+    loadUserHistory,
+    setUserHistory,
+    errorUserHistory
 }

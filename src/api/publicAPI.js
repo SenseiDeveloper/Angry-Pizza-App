@@ -12,7 +12,7 @@ export const loadProducts = () => {
     });
 };
 
-export const loadPizzas = () => {;
+export const loadPizzas = () => {
     return fetch(`${config.baseURL}/pizza-list`,{
         headers,
         method: "GET",

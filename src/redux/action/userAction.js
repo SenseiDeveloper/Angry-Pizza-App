@@ -18,3 +18,21 @@ export const saveUserAddress = payload => ({
     type: typeActions.USER_SAVE_ADDRESS,
     payload
 });
+
+export const saveHistoryPizza = payload => ({
+    type: typeActions.PIZZA_USER_SAVE_PIZZA_HISTORY,
+    payload
+});
+
+export const loadUserHistory = payload => ({
+    type: typeActions.USER_FETCH_HISTORY,
+    payload
+});
+
+export const setUserHistory = payload => ({
+    type: typeActions.USER_FETCH_HISTORY_SUCCESS,
+    payload
+});
+export const errorUserHistory = () => ({
+    type: typeActions.USER_FETCH_HISTORY_ERROR
+});

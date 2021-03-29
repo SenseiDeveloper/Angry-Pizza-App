@@ -4,7 +4,6 @@ section.pizza {
   .innerSection {
     display: flex;
     flex-direction: row;
-
     .sectionContent {
       width: 100%;
 
@@ -48,10 +47,59 @@ section.pizza {
           }
         }
       }
-
+      .orderHistory{
+        margin: 10px 5px;
+        ul{
+          list-style: none;
+          margin: 10px 0;
+          padding: 10px;
+          background: rgb(174,224,251);
+          background: linear-gradient(90deg, rgba(174,224,251,1) 0%, rgba(226,241,250,1) 100%);
+          box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+          border-radius: 3px;
+          li{
+            display: inline-block;
+            padding: 0 5px;
+          }
+        }
+        @media (min-width: 640px){
+          ul{
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
       .pizzaShop {
         margin: 10px 5px;
-
+        .btn-primary{
+          margin-bottom: 10px;
+        }
+        .pizzaBar{
+          width: 100%;
+          padding: 5px;
+          margin: 5px 0;
+          display: flex;
+          background: rgb(34,167,240);
+          border-radius: 3px;
+          background: linear-gradient(90deg, rgba(174,224,251,1) 0%, rgba(226,241,250,1) 100%);
+          box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+          ul{
+            margin: 0;
+            padding: 0;
+            li{
+              box-shadow: none;
+              p{
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+              }
+              span{
+                text-transform: uppercase;
+                font-weight: bold;
+              }
+            }
+          }
+        }
         input {
           margin: 20px 0;
           text-align: center;

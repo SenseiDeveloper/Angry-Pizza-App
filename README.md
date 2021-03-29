@@ -29,4 +29,5 @@
 - pizza constructor page - responsive;
 - pizza page - my pizza- responsive;
 - pizza page - profile - responsive;
+- pizza page - history - responsive;
 

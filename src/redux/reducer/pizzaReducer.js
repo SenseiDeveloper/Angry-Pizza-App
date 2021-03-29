@@ -3,6 +3,8 @@ import typeActions from '../action/types';
 const statePizzas = {
     pizzas: [],
     pizzasUser: [],
+    pizzaHistory: [],
+    loadingHistory: false,
     loadingUserPizza: false,
     loading: false
 };
@@ -44,6 +46,24 @@ export const pizzaReducer = (state = statePizzas, action) => {
                 ...state,
                 pizzasUser: [],
                 loadingUserPizza: false
+            };
+        case typeActions.USER_FETCH_HISTORY:
+            return {
+                ...state,
+                pizzaHistory: [],
+                loadingHistory: false,
+            };
+        case typeActions.USER_FETCH_HISTORY_SUCCESS:
+            return {
+                ...state,
+                pizzaHistory: [action.payload],
+                loadingHistory: true,
+            };
+        case typeActions.USER_FETCH_HISTORY_ERROR:
+            return {
+                ...state,
+                pizzaHistory: [],
+                loadingHistory: false,
             };
         default:
             return state;

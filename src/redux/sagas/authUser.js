@@ -72,7 +72,7 @@ export function* fetchSaveAddress(action) {
         localStorage.setItem('user', JSON.stringify(response));
         yield put(saveUserAddress(response));
         yield put(setMessage({
-            message: 'Ви зберегли адрессу',
+            message: 'Ви зберегли адресу',
             status: 'success'
         }));
     }catch (e) {

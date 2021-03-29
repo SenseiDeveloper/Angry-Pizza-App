@@ -1,5 +1,8 @@
 section.order{
   padding: 20px 0;
+  .modal{
+    z-index: 99;
+  }
   .delivery{
     margin: 10px 0;
     padding: 5px 5px 35px 5px;
@@ -19,6 +22,7 @@ section.order{
       background: transparent;
       border: 1px solid gainsboro;
       border-radius: 0;
+      z-index: 1;
     }
 
     .select-wrapper > select {
@@ -100,5 +104,16 @@ section.order{
         }
       }
     }
+  }
+}
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
   }
 }

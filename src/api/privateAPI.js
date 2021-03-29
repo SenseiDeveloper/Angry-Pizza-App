@@ -37,3 +37,18 @@ export const getUserData = (token,id) => {
         method: "GET",
     })
 };
+
+export const loadHistory = (id,token) => {
+    return fetch(`${config.baseURL}/user-history/${id}`,{
+            headers: authHeaders(token),
+            method: "GET",
+        })
+};
+
+export const saveHistory = (data,token) => {
+    return fetch(`${config.baseURL}/user-history`,{
+        headers: authHeaders(token),
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+};

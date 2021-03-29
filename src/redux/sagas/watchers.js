@@ -2,7 +2,7 @@ import { takeEvery } from "redux-saga/effects";
 import actionTypes from '../action/types';
 import {fetchRegistrationUser,fetchLoginUser,fetchSaveAddress,fetchUserData} from './authUser';
 import {fetchPizzaProducts,savePizza} from './pizzaConstructor';
-import {fetchPizza,fetchUserPizza} from './pizza';
+import {fetchPizza,fetchUserPizza,saveHistoryUserPizza,historyUser} from './pizza';
 
 export function* watchRegistrationUser() {
     yield takeEvery(actionTypes.AUTH_FETCH_REGISTER_USER, fetchRegistrationUser);
@@ -34,4 +34,12 @@ export function* watchSaveAddress() {
 
 export function* watchUserData() {
     yield takeEvery(actionTypes.USER_LOAD_DATA, fetchUserData)
+}
+
+export function* watchHistoryUser() {
+    yield  takeEvery(actionTypes.USER_FETCH_HISTORY, historyUser)
+}
+
+export function* saveHistoryPizza() {
+    yield takeEvery(actionTypes.PIZZA_USER_SAVE_PIZZA_HISTORY, saveHistoryUserPizza)
 }

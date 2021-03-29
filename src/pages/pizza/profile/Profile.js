@@ -45,7 +45,11 @@ export const Profile = () => {
                             </>
                         }
                     </ul>
-                    <button onClick={()=> setModalState(!modalState)}>Змінити адресу</button>
+                    {
+                        !user?.address ?
+                            null:
+                        <button onClick={()=> setModalState(!modalState)}>Змінити адресу</button>
+                    }
                 </div>
             </div>
         </div>

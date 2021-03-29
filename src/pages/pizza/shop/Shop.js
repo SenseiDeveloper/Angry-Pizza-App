@@ -6,11 +6,13 @@ import {PizzaItem} from './pizzaItem';
 import {Loader} from "../../../components/loader/loader";
 import {Pagination} from '../../../components/pagination';
 import {SearchPizzaInput} from '../../../components/searchPizzaInput';
+import {PizzaDone} from './pizzaDone';
 
 export const Shop = () => {
     const [pizzaState, setPizzaState] = useState([]);
     const [searchMess, setSearchMess] = useState('');
     const pizzaArray = useSelector(state => state.pizza);
+    const pizzaBar = JSON.parse(localStorage.getItem('pizza-done'));
 
     const initItem = () => {
         const result = [];
@@ -44,6 +46,13 @@ export const Shop = () => {
     return (
         <div className="pizzaShop">
             <ButtonConstructor />
+            {
+                !pizzaBar ?
+                    null:
+                    pizzaBar.map(p =>
+                        <PizzaDone key={p.time} pizza={p}/>
+                    )
+            }
             <SearchPizzaInput
                 pizzaArray={pizzaArray.pizzas}
                 handleSearchField={handleSearchField}

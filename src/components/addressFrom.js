@@ -7,11 +7,12 @@ import {fetchSaveUserAddress} from '../redux/action/userAction';
 
 export const AddressForm = () => {
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const formik = useFormik({
         initialValues: {
-            street: '',
-            address: ''
+            street: user.address?.street || '',
+            address: user.address?.address || ''
         },
         validate,
         onSubmit: values => {
