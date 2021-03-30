@@ -10,6 +10,7 @@ import {Payment} from '../../components/payment';
 import {useDispatch} from "react-redux";
 import {setMessage} from '../../redux/action/messageAction';
 import {saveHistoryPizza} from '../../redux/action/userAction';
+import {createObjHistory} from '../../helpers/pizza';
 
 export const Order = () => {
     const dispatch = useDispatch();
@@ -33,42 +34,33 @@ export const Order = () => {
                     status: 'info'
                 }));
             }else {
-                const pizzas = JSON.parse(pizzaStorage);
-                const priceMoney = mathPrice(pizzaState);
-                const user = JSON.parse(localStorage.getItem('user')).id;
-                const priceBonus = price + (bonus !== 0? bonus : 0);
-
                 if(type === 'money'){
                     if (isUserLogged()){
-                        const savePizza = {
-                            pizzas,
-                            priceMoney,
-                            priceBonus,
-                            user
-                        };
-                        dispatch(saveHistoryPizza(savePizza));
+                        const user = JSON.parse(localStorage.getItem('user')).coins;
+                        const newPrice = user + price;
+                        dispatch(saveHistoryPizza(createObjHistory(pizzaStorage,pizzaState,newPrice,bonus)));
                         setModalState(true);
                     } else {
                         setModalState(true);
                     }
                 }else {
-                    console.log('bonus')
+                    const priceMoney = mathPrice(pizzaState);
+                    const user = JSON.parse(localStorage.getItem('user')).coins;
+                    if((user - priceMoney) < 0){
+                        dispatch(setMessage({
+                            message: 'У вас недостатньо бонусів',
+                            status: 'danger'
+                        }));
+                    }else {
+                        const user = JSON.parse(localStorage.getItem('user')).coins;
+                        const priceMoney = mathPrice(pizzaState);
+                        const newPrice = user - priceMoney;
+                        dispatch(saveHistoryPizza(createObjHistory(pizzaStorage,pizzaState,newPrice,0)));
+                        setModalState(true);
+                    }
                 }
             }
         }
-
-
-
-        /*const pizzas = JSON.parse(pizzaStorage);
-        const priceMoney = mathPrice(pizzaState);
-        const priceBonus = price + (bonus !== 0? bonus : 0);
-        const user = JSON.parse(localStorage.getItem('user')).id;
-        //setModalState(true);
-        console.log('buy');
-        console.log(pizzas);
-        console.log(priceMoney);
-        console.log(priceBonus);
-        console.log(user);*/
     };
 
     const handleChangeModalState = (state) => {
@@ -134,7 +126,14 @@ export const Order = () => {
                 }
                 </div>
             </div>
-            <button className="btn btn-secondary" onClick={()=> handleBuy('money')}>Оплатити</button>
+           <div className="btnContainer">
+               <button className="btn btn-secondary" onClick={()=> handleBuy('money')}>Оплатити</button>
+               {
+                   isUserLogged() ?
+                       <button className="btn btn-primary" onClick={()=> handleBuy('bonus')}>Оплатити бонусами</button>
+                       :null
+               }
+           </div>
         </section>
     );
 };

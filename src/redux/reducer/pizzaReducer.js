@@ -56,7 +56,7 @@ export const pizzaReducer = (state = statePizzas, action) => {
         case typeActions.USER_FETCH_HISTORY_SUCCESS:
             return {
                 ...state,
-                pizzaHistory: [action.payload],
+                pizzaHistory: action.payload,
                 loadingHistory: true,
             };
         case typeActions.USER_FETCH_HISTORY_ERROR:

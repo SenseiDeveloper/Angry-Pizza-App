@@ -12,7 +12,8 @@ import {
     setUserData,
     loadUserHistory,
     setUserHistory,
-    errorUserHistory
+    errorUserHistory,
+    updateDataUser
 } from './userAction';
 
 import {
@@ -85,5 +86,6 @@ export default {
     setUserData,
     loadUserHistory,
     setUserHistory,
-    errorUserHistory
+    errorUserHistory,
+    updateDataUser
 }

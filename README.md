@@ -30,4 +30,6 @@
 - pizza page - my pizza- responsive;
 - pizza page - profile - responsive;
 - pizza page - history - responsive;
+- page payment - responsive;
+- page order - responsive;
 

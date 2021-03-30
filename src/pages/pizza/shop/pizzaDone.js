@@ -27,7 +27,7 @@ export const PizzaDone = ({pizza}) => {
                     mess:'Готується'
                 });
             }
-        },30000);
+        },20000);
         return () => {
             clearInterval(timeOut);
         }
@@ -37,6 +37,7 @@ export const PizzaDone = ({pizza}) => {
         <div className="pizzaBar">
             <ul>
                 <li><p><span>Замовлення:</span> {(pizza.pizza).join()}</p></li>
+                <li><p><span>Cтатус:</span> Оплачено</p></li>
                 <li>
                     <p><span>Процес:</span> {statusOrder.mess}
                         {

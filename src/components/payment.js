@@ -5,11 +5,11 @@ import { useHistory } from "react-router-dom";
 export const Payment = () => {
     const [process, setProcess] = useState(true);
     const history = useHistory();
-    const TIME = 5000;
+    const TIME = 3000;
     const data = new Date();
 
     useEffect(()=>{
-        const timer = setTimeout(()=>{
+        const timerClean = setTimeout(() => {
             const pizzas = JSON.parse(localStorage.getItem('pizzas'));
             const pizzaName = pizzas.map(p => p.name);
             const done = new Date(data.getTime() + 180000);
@@ -30,11 +30,12 @@ export const Payment = () => {
                 }]));
                localStorage.removeItem('pizzas');
             }
+
             setProcess(false);
             history.push('/pizza/shop');
         },TIME);
         return () => {
-            clearTimeout(timer);
+            clearTimeout(timerClean);
         }
     },[]);
     return (

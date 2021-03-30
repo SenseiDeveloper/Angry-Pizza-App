@@ -3,7 +3,7 @@ import {loadPizzas} from '../../api/publicAPI';
 import {loadPizzaUser, saveHistory,loadHistory} from '../../api/privateAPI';
 import {fetchPizzaSuccess, fetchPizzasError, fetchUserPizzasSuccess, fetchUserPizzasError} from '../action/pizzaAction';
 import {setMessage} from "../action/messageAction";
-import {setUserHistory} from '../action/userAction';
+import {setUserHistory,updateDataUser} from '../action/userAction';
 
 export function* fetchPizza() {
     try {
@@ -58,12 +58,16 @@ export function* historyUser(action) {
 export function* saveHistoryUserPizza(action) {
     const token = localStorage.getItem('token');
     try {
-        const responce = yield call(() =>
+        const response = yield call(() =>
             saveHistory(action.payload, token)
                 .then(res => res.json())
         );
-        console.log(responce);
+       yield put(updateDataUser(response))
     } catch (e) {
-
+        yield put(fetchUserPizzasError());
+        yield put(setMessage({
+            message: e.error,
+            status: 'danger'
+        }));
     }
 }

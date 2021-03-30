@@ -19,8 +19,22 @@ export const pizzaValidation = products => {
     }
 };
 
-export const mathPrice = state =>{
+export const mathPrice = state => {
     const price = state.map( e => e.price);
     const setPrice = price.reduce((one,two) => { return one + two},0);
     return setPrice;
+};
+
+export const createObjHistory = (pizzaStorage,pizzaState,price,bonus) => {
+    const pizzas = JSON.parse(pizzaStorage);
+    const priceMoney = mathPrice(pizzaState);
+    const user = JSON.parse(localStorage.getItem('user')).id;
+    const priceBonus = price + (bonus !== 0? bonus : 0);
+    const savePizza = {
+        pizzas,
+        priceMoney,
+        priceBonus,
+        user
+    };
+    return savePizza;
 };

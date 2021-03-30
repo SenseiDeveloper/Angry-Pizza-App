@@ -36,3 +36,8 @@ export const setUserHistory = payload => ({
 export const errorUserHistory = () => ({
     type: typeActions.USER_FETCH_HISTORY_ERROR
 });
+
+export const updateDataUser = payload => ({
+    type: typeActions.USER_UPDATE_DATA,
+    payload
+});

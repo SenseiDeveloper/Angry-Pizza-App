@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import {loadUserHistory} from "../../../redux/action/userAction";
 import {useDispatch, useSelector} from "react-redux"
 import {HistoryItem} from './historyItem';
+import {Loader} from "../../../components/loader/loader";
 
 export const OrderHistory = () => {
     const dispatch = useDispatch();
@@ -19,11 +20,12 @@ export const OrderHistory = () => {
                 history && history.loadingHistory ?
                     <>
                         {
-                            history.pizzaHistory.map( h => <HistoryItem key={h.id} history={h}/>)
+                            history && history.pizzaHistory.length !== 0 ?
+                                history.pizzaHistory.map(h => <HistoryItem key={h.id} history={h}/>)
+                                : <p>У вас немає історії покупок</p>
                         }
                     </>
-                    :
-                    <p>У вас немає історії покупок</p>
+                    : <Loader/>
             }
         </div>
     );

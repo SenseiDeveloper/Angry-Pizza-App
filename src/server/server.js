@@ -131,14 +131,33 @@ app.get('/api/user/:id',cors() , auth, (req,res) => {
 
 //API GET USER HISTORY
 app.get('/api/user-history/:id', auth, cors(), (req,res)=> {
-    const userHistory = history().find(u => u.userID === Number(req.params.id));
+    const userHistory = history().filter(u => {
+        if (u.userID === Number(req.params.id)){
+            return u;
+        }
+    });
     res.status(200).send(userHistory);
 });
 
 //API BUY PIZZA
 app.post('/api/user-history', auth, cors(), (req,res)=>{
-    console.log(req.body);
-    //history
+    const pizzaHistory = {
+        id: new Date(),
+        userID: req.body.user,
+        price: req.body.priceMoney,
+        pizzas: req.body.pizzas
+    };
+    history().push(pizzaHistory);
+    users().map(u => {
+        if (u.id === req.body.user){
+            let coin = Math.floor(Number( req.body.priceBonus * 100)/100);
+            u.coins = coin;
+            return u;
+        }
+        return u;
+    });
+    const user = users().find(u => u.id === Number(req.body.user));
+    res.status(200).send(user);
 });
 
 app.listen(9000, function () {
