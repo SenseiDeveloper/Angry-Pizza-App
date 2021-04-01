@@ -21,7 +21,7 @@ export const Promotions = () => {
                     <div className="icon"><FaPizzaSlice /></div>
                     <div className="text">
                         <h4>Акція 3+1</h4>
-                        <p>При замовленні будь-яких чотирьох піц , Ви отримуєте одну безкоштовно</p>
+                        <p>При замовленні будь-яких чотирьох піц , Ви отримуєте 57 Angry Coins</p>
                     </div>
                 </div>
                 <div className="promotionItem">

@@ -9,11 +9,24 @@ const statePizzaConstructor = {
     selectProducts: {
         basis: {},
         products: []
-    }
+    },
+    editPizza: {}
 };
 
 export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) => {
     switch (action.type) {
+        case typeActions.PIZZA_CONSTRUCTOR_CLEAN:
+            return {
+                products: {
+                    data: {},
+                    loading: false
+                },
+                selectProducts: {
+                    basis: {},
+                    products: []
+                },
+                editPizza: {}
+            };
         case typeActions.PIZZA_CONSTRUCTOR_FETCH_PRODUCTS:
             return{
                 ...state,
@@ -48,11 +61,18 @@ export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) 
             };
         case typeActions.PIZZA_CONSTRUCTOR_SELECT_BASIS:
             return {
+                ...state,
                 products: {
                     ...state.products,
                     data: {
-                        basis: [...state.products.data.basis,action.payload],
-                        ...state.products.data
+                        ...state.products.data,
+                        basis:state.products.data.basis.map(b => {
+                            if(b.id === action.payload.id){
+                                b.select = true;
+                                return b;
+                            }
+                            return b;
+                        })
                     }
                 },
                 selectProducts: {
@@ -62,11 +82,18 @@ export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) 
             };
         case typeActions.PIZZA_CONSTRUCTOR_SELECT_PRODUCT:
             return {
+                ...state,
                 products: {
                     ...state.products,
                     data: {
-                        [action.payload.type]: [...state.products.data.basis,action.payload],
-                        ...state.products.data
+                        ...state.products.data,
+                        [action.payload.type]: state.products.data[action.payload.type].map( p => {
+                            if(p.id === action.payload.id){
+                                p.select = true;
+                                return p;
+                            }
+                            return p;
+                        })
                     }
                 },
                 selectProducts: {
@@ -76,6 +103,7 @@ export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) 
             };
         case typeActions.PIZZA_CONSTRUCTOR_REMOVE_SELECT_PRODUCT:
             return {
+                ...state,
                 products: {
                     ...state.products,
                     data: {
@@ -113,6 +141,11 @@ export const pizzaConstructorReducer = ( state = statePizzaConstructor, action) 
                         return p;
                     })
                 }
+            };
+        case typeActions.PIZZA_CONSTRUCTOR_EDIT_PIZZA:
+            return {
+                ...state,
+                editPizza: action.payload
             };
         default:
             return state;

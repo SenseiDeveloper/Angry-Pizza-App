@@ -27,7 +27,7 @@ export const Main = () => {
             <Switch>
                 {
                     appRoutes.map( route =>
-                        <Route path={route.path} key={route.path} component={components[route.component]}/>
+                        <Route path={route.path} exact={route.exact} key={route.path} component={components[route.component]}/>
                     )
                 }
                 <Redirect exect from="/" to="/home"/>

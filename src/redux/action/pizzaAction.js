@@ -22,6 +22,8 @@ export const fetchUserPizzasSuccess = payload => ({
     type: typeActions.PIZZA_USER_FETCH_SUCCESS,
     payload
 });
+
 export const fetchUserPizzasError = () => ({
     type: typeActions.PIZZA_USER_FETCH_ERROR,
 });
+

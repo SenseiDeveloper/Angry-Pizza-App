@@ -45,7 +45,10 @@ import {
     countDecrementSelectProducts,
     removeSelectProduct,
     savePizza,
-    clearSelectProducts
+    clearSelectProducts,
+    editPizza,
+    editPizzaFetch,
+    pizzaConstructorClean
 } from './pizzaConstructorAction';
 
 import {clearMessage,setMessage} from './messageAction';
@@ -87,5 +90,8 @@ export default {
     loadUserHistory,
     setUserHistory,
     errorUserHistory,
-    updateDataUser
+    updateDataUser,
+    editPizza,
+    editPizzaFetch,
+    pizzaConstructorClean
 }

@@ -10,7 +10,8 @@ import {
     watchSaveAddress,
     watchUserData,
     saveHistoryPizza,
-    watchHistoryUser
+    watchHistoryUser,
+    watchEditPizza
 } from "./watchers";
 
 export default function* root() {
@@ -24,6 +25,7 @@ export default function* root() {
         watchSaveAddress(),
         watchUserData(),
         saveHistoryPizza(),
-        watchHistoryUser()
+        watchHistoryUser(),
+        watchEditPizza()
     ]);
 }

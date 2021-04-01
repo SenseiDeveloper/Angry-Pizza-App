@@ -46,3 +46,17 @@ export const savePizza = payload => ({
     type: typeActions.PIZZA_CONSTRUCTOR_SAVE_PIZZA,
     payload
 });
+
+export const editPizza = payload => ({
+    type: typeActions.PIZZA_CONSTRUCTOR_EDIT_PIZZA,
+    payload
+});
+
+export const editPizzaFetch = payload => ({
+    type: typeActions.PIZZA_CONSTRUCTOR_EDIT_PIZZA_FETCH,
+    payload
+});
+
+export const pizzaConstructorClean = () => ({
+    type: typeActions.PIZZA_CONSTRUCTOR_CLEAN
+});

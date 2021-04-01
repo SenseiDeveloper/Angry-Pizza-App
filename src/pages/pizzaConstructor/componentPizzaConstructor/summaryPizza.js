@@ -13,6 +13,15 @@ export const SummaryPizza = () => {
     const [price, setPrice] = useState(0);
     const [name,setName] = useState('Моя піцца');
     const products = useSelector(state => state.pizzaConstructor.selectProducts);
+    const editPizza = useSelector(state => state.pizzaConstructor.editPizza);
+
+    useEffect(()=>{
+        if(Object.keys(editPizza).length !== 0){
+            setName(editPizza.name);
+        }else {
+            setName('Моя піцца')
+        }
+    },[]);
 
     const userPizzaCreator = () => {
         const userID = JSON.parse(localStorage.getItem('user')).id;

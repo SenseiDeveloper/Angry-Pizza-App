@@ -1,7 +1,6 @@
-import React,{useEffect,useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React,{useState} from 'react';
+import {useSelector} from "react-redux";
 
-import {fetchProducts} from '../../../redux/action/pizzaConstructorAction';
 import {Loader} from '../../../components/loader/loader';
 import {ProductPizza} from './productPizza';
 import {GiFullPizza} from 'react-icons/gi';
@@ -10,7 +9,6 @@ import {GiMeat} from 'react-icons/gi';
 import {GiFruitBowl} from 'react-icons/gi';
 
 export const ProductsPizza = () => {
-    const dispatch = useDispatch();
     const [stateAccordion, setStateAccordion] = useState({
         basis: true,
         cheese: false,
@@ -30,11 +28,6 @@ export const ProductsPizza = () => {
             [type]: true
         });
     };
-
-    useEffect(()=>{
-        dispatch(fetchProducts());
-    },[]);
-
 
     return(
         <div className="productsPizza">

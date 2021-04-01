@@ -194,17 +194,20 @@ section.pizza {
               .price {
                 display: flex;
                 justify-content: space-between;
-
+                align-items: center;
                 p {
                   margin-top: 12px;
                   color: rgb(240, 52, 52);
                   font-weight: bold;
                 }
-
+                .btn-container{
+                  margin-top: 5px;
+                  display: flex;
+                  align-items: center;
+                }
                 button {
                   font-size: 13px;
-                  float: left;
-                  margin-top: 10px;
+                  margin: 0 3px;
                 }
               }
 

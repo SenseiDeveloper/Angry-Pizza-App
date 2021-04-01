@@ -22,7 +22,8 @@ export const appRoutes = [
     }
     ,{
         path: '/pizza-constructor',
-        component: 'PizzaConstructor'
+        component: 'PizzaConstructor',
+        exact: true
     },
     {
         path: '/order',

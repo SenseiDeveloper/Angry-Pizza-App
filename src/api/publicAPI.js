@@ -6,7 +6,7 @@ const headers = {
 };
 
 export const loadProducts = () => {
-    return fetch(`${config.baseURL}/pizza-products`,{
+    return  fetch(`${config.baseURL}/pizza-products`,{
         headers,
         method: "GET",
     });
