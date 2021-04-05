@@ -8,7 +8,6 @@
 - password: 123456789
 
 # Development:
-- use scss;
 - use first mobile development;
 - use React Icons;
 - use Redux;
@@ -16,20 +15,4 @@
 - use Redux Saga;
 - use Node Express server;
 
-
-# notes:
-- add page not found;
-- add lezy loading;
-- correct design;
-
-# page:
-- home - responsive;
-- auth page - responsive;
-- pizza page - shop - responsive;
-- pizza constructor page - responsive;
-- pizza page - my pizza- responsive;
-- pizza page - profile - responsive;
-- pizza page - history - responsive;
-- page payment - responsive;
-- page order - responsive;
 

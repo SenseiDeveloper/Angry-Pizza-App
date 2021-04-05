@@ -28,6 +28,14 @@ export const appRoutes = [
     {
         path: '/order',
         component: 'Order'
+    },
+    {
+        path: '*',
+        component: 'NotFound'
+    },
+    {
+        path: '',
+        component: 'NotFound'
     }
 ];
 

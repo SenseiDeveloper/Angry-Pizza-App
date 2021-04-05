@@ -13,9 +13,10 @@ import {Auth} from "../../pages/auth/Auth";
 import {PizzaConstructor} from "../../pages/pizzaConstructor/PizzaConstructor";
 import {ModalBasket} from '../../components/modal/modalBasket';
 import {Order} from "../order/Order";
+import {NotFound} from "../../pages/notFound/NotFound";
 
 const components = {
-    Home,Pizza,Info,Promotions,Auth,PizzaConstructor,Order
+    Home,Pizza,Info,Promotions,Auth,PizzaConstructor,Order,NotFound
 };
 
 export const Main = () => {
