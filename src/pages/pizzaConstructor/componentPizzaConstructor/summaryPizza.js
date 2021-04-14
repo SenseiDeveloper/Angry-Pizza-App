@@ -24,7 +24,7 @@ export const SummaryPizza = () => {
     },[]);
 
     const userPizzaCreator = () => {
-        const userID = JSON.parse(localStorage.getItem('user')).id;
+        const userID = JSON.parse(localStorage.getItem('user'))?.id || null;
         return  {
             userID,
             pizza:{
